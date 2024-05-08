@@ -1,19 +1,15 @@
 /** @format */
-
-// React imports
 import React, { useEffect, useState } from "react";
 
-// Icon imports
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa";
 import { LockClosedIcon } from "@heroicons/react/24/outline";
 import { FaTwitter, FaGoogle } from "react-icons/fa";
 
 // CSS imports
-import "./LoginPage.css";
-
-export default function LoginPage() {
-	const [showPassword, setShowPassword] = useState(false);
+import "../Login/LoginPage";
+export default function Signup() {
+    const [showPassword, setShowPassword] = useState(false);
 
 	const showRegister = () => {
 		window.location.href = "/signup";
