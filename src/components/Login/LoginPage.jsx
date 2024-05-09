@@ -51,7 +51,15 @@ export default function LoginPage() {
 			</div>
 			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll ">
 				<img src="./images/logo.png" className="w-24 " alt=" App Logo" />
-				<div className="flex flex-col md:my-auto">
+				<div className="flex flex-col ">
+				<div className="pb-10">
+						{/* back button  */}
+
+						<div className="flex items-center gap-1 w-1/2">
+							<div className="rounded-full bg-purple-700 h-1.5 w-full"></div>
+							<div className="rounded-full bg-slate-100 h-1.5 w-full "></div>
+						</div>
+					</div>
 					<h2 className="text-[#201925] font-bold text-3xl">
 						Welcome To Bumasel
 					</h2>
