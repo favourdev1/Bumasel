@@ -1,35 +1,58 @@
 /** @format */
 
-// React imports
 import React, { useEffect, useState } from "react";
-
-// Icon imports
-import { FaRegEyeSlash } from "react-icons/fa6";
-import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash, FaRegEye, FaTwitter, FaGoogle } from "react-icons/fa";
 import { LockClosedIcon } from "@heroicons/react/24/outline";
-import { FaTwitter, FaGoogle } from "react-icons/fa";
-// CSS imports
 import "./LoginPage.css";
-
+import ResetPassword from "../ResetPassword/ResetPassword";
+import ForgotPassword from "../ForgotPassword/ForgotPassword";
+import VerifyOtp from "../VerifyOtp/VerifyOtp";
+import widths from "../animatedWidth"
 export default function LoginPage() {
+	// State declarations
 	const [showPassword, setShowPassword] = useState(false);
-
+	const [open, setOpen] = useState(false);
+	const [openverifyOTPModal, setopenVerifyOTPModal] = useState(true);
+	const [openForgotPasswordModal, setOpenForgotPasswordModal] = useState(false);
+	const [animatedWidth, setAnimatedWidth] = useState("w-full");
+	
+	
+	// Function to navigate to registration page
 	const showRegister = () => {
 		window.location.href = "/signup";
 	};
-	// Rest of your component code...
-
 	useEffect(() => {
-		// Save original overflow style
-		const originalStyle = window.getComputedStyle(document.body).overflow;
+		const intervalId = setInterval(() => {
+			// Generate a random index excluding the current index
+			let randomIndex;
+			do {
+				randomIndex = Math.floor(Math.random() * widths.length);
+			} while (randomIndex === widths.indexOf(animatedWidth));
 
-		// Prevent scrolling on mount
+			setAnimatedWidth(widths[randomIndex]);
+		}, 2000);
+
+		return () => clearInterval(intervalId);
+	}, [animatedWidth, widths]);
+
+	// Effect hook to prevent scrolling on mount
+	useEffect(() => {
+		const originalStyle = window.getComputedStyle(document.body).overflow;
 		document.body.style.overflow = "hidden";
 		return () => (document.body.style.overflow = originalStyle);
-	}, []); // Empty array ensures effect is only run on mount and unmount
+	}, []);
 
+	// ========================================================================
+	// =====================Return Function ====================================
+	// =====================================================================
 	return (
 		<div className="h-screen m-0 bg-white flex items-center  px-3">
+			<ForgotPassword
+				open={openForgotPasswordModal}
+				setOpen={setOpenForgotPasswordModal}
+			/>
+			<VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} />
+			<ResetPassword open={open} setOpen={setOpen} />
 			<div className="hidden  lg:flex lg:w-2/5 relative overflow-hidden h-full  items-center">
 				<div className="fixed h-[90vh] relative ">
 					<img
@@ -52,12 +75,15 @@ export default function LoginPage() {
 			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll ">
 				<img src="./images/logo.png" className="w-24 " alt=" App Logo" />
 				<div className="flex flex-col ">
-				<div className="pb-10">
+					<div className="pb-10">
 						{/* back button  */}
 
 						<div className="flex items-center gap-1 w-1/2">
-							<div className="rounded-full bg-purple-700 h-1.5 w-full"></div>
-							<div className="rounded-full bg-slate-100 h-1.5 w-full "></div>
+				
+							<div
+								className={`rounded-full duration-500 bg-purple-700 h-1.5  ${animatedWidth}`}
+							></div>
+							<div className="rounded-full bg-slate-100 h-1.5 flex-1 "></div>
 						</div>
 					</div>
 					<h2 className="text-[#201925] font-bold text-3xl">
@@ -72,6 +98,7 @@ export default function LoginPage() {
 							<img
 								src="./svg/email.svg"
 								className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700"
+								alt="email"
 							/>
 							<input
 								type="text"
@@ -101,8 +128,11 @@ export default function LoginPage() {
 							</div>
 						</div>
 						<div className="flex items-center">
-							<p className="text-purple-700 mt-5 text-sm ml-auto">
-								Forgotten Password ?
+							<p
+								className="text-purple-700  mt-5 text-sm  ml-auto cursor-pointer"
+								onClick={() => setOpenForgotPasswordModal(true)}
+							>
+								Forgot Password ?
 							</p>
 						</div>
 						<button

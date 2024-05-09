@@ -7,10 +7,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // components 
 import TestComponent from './components/TestComponent';
-import LoginPage from './components/Login/LoginPage';
-import Signup from './components/Signup/Signup';
+import LoginPage from './components/Auth/Login/LoginPage';
+import Signup from './components/Auth/Signup/Signup';
 
 ReactDOM.render(
+
   <React.StrictMode>
     <Router>
       <Routes>
@@ -21,6 +22,7 @@ ReactDOM.render(
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
     </Router>
-  </React.StrictMode>,
+    </React.StrictMode>,
+   
   document.getElementById('root')
 );
