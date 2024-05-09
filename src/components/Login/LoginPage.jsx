@@ -8,7 +8,6 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa";
 import { LockClosedIcon } from "@heroicons/react/24/outline";
 import { FaTwitter, FaGoogle } from "react-icons/fa";
-
 // CSS imports
 import "./LoginPage.css";
 
@@ -32,25 +31,27 @@ export default function LoginPage() {
 	return (
 		<div className="h-screen m-0 bg-white flex items-center  px-3">
 			<div className="hidden  lg:flex lg:w-2/5 overflow-hidden h-full  items-center">
-				<div className="my-aut relative ">
-					<img
-						src="./images/login-girl.png"
-						className="rounded-xl border-slate-100 h-[92vh] max-h-[100vh]  w-full h-full"
-						alt="Login Page Image "
-					/>
-					<div className="absolute bottom-5 w-full pl-10 py-10">
-						<div class="backdrop-blur-xl bg-white/20 e w-3/4 rounded-lg p-4 text-white py-5">
-							<p className="font-bold text-xl">
-								The Best Ecommerce Platform You Can Ask For
-							</p>
-							<p className="text-base">
-								we sell everything you need for your day to day activities
-							</p>
+				<div className="hidden  lg:flex lg:w-2/5 relative overflow-hidden h-full  items-center">
+					<div className="fixed h-[90vh] relative ">
+						<img
+							src="./images/login-girl.png"
+							className="rounded-xl border-slate-100  max-h-[100vh]  w-full h-full"
+							alt="Login Page"
+						/>
+						<div className="absolute bottom-5 w-full pl-10 py-10">
+							<div class="backdrop-blur-xl bg-white/20 e w-3/4 rounded-lg p-4 text-white py-5">
+								<p className="font-bold text-xl">
+									The Best Ecommerce Platform You Can Ask For
+								</p>
+								<p className="text-base pr-5">
+									we sell everything you need for your day to day activities
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full">
+			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll ">
 				<img src="./images/logo.png" className="w-24 " alt=" App Logo" />
 				<div className="flex flex-col md:my-auto">
 					<h2 className="text-[#201925] font-bold text-3xl">
