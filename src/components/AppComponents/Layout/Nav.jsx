@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Logoimg from "../Icon/Logo.png";
+import Logoimg from "../../Icon/Logo.png";
 import { Link } from "react-router-dom";
-import { SearchIcon } from "./SearchIcon.jsx";
-import RateIcon from "../Icon/RateIcon.jsx";
-import HeartIcon from "../Icon/HeartIcon.jsx";
-import HelpIcon from "../Icon/HelpIcon.jsx";
+import { SearchIcon } from "../SearchIcon.jsx";
+import RateIcon from "../../Icon/RateIcon.jsx";
+import HeartIcon from "../../Icon/HeartIcon.jsx";
+import HelpIcon from "../../Icon/HelpIcon.jsx";
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,7 +15,7 @@ export default function App() {
           <div className="flex justify-between items-center w-full ">
             <div className="flex-shrink-0 ">
               <Link to={"/"} className=" text-lg font-bold">
-                Logo
+                <img src={Logoimg} alt="" />
               </Link>
             </div>
             <div className="ml-4 flex items-center md:ml-6  w-2/3">

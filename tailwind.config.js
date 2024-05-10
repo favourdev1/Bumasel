@@ -7,7 +7,11 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      // backgroundImage: {
+      //   "Footer-Bg": "url('/images/Rectangle.png')",
+      // },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
