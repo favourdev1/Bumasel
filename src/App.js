@@ -1,6 +1,6 @@
 /** @format */
 
-import { NextUIProvider } from "@nextui-org/react";
+
 import "./App.css";
 import { useState } from "react";
 import { SearchIcon } from "./components/AppComponents/SearchIcon";
@@ -10,7 +10,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   return (
     <>
-      <NextUIProvider>
+     
         <div className="ml-4 flex justify-center pt-6 items-center md:ml-6  w-full">
           <div className="relative w-1/2">
             <input
@@ -31,7 +31,7 @@ function App() {
           </div>
         </div>
         <Cardgroupfirst />
-      </NextUIProvider>
+     
     </>
   );
 }

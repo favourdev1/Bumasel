@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@nextui-org/react";
+import Logoimg from "../Icon/Logo.png";
 import { Link } from "react-router-dom";
 import { SearchIcon } from "./SearchIcon.jsx";
 import RateIcon from "../Icon/RateIcon.jsx";
@@ -12,10 +12,10 @@ export default function App() {
     <div>
       <nav className=" py-4 px-6 ">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center w-full">
-            <div className="flex-shrink-0">
-              <Link to={"/"} className="text-white text-lg font-bold">
-                Your Brand
+          <div className="flex justify-between items-center w-full ">
+            <div className="flex-shrink-0 ">
+              <Link to={"/"} className=" text-lg font-bold">
+                Logo
               </Link>
             </div>
             <div className="ml-4 flex items-center md:ml-6  w-2/3">
@@ -38,38 +38,39 @@ export default function App() {
               </div>
             </div>
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-6">
-                <Button
+              <div className="ml-10 flex items-center space-x-6">
+                <button
                   color=""
-                  startContent={<HeartIcon />}
-                  className="bg-[#FAF7FF] text-[#8527CD]"
+                  className="bg-[#FAF7FF] text-[#8527CD] flex gap-2 rounded-xl px-4 py-2"
                 >
+                  <HeartIcon />
                   Saved
-                </Button>
-                <Button
+                </button>
+                <Link
                   color=""
-                  startContent={<HeartIcon />}
-                  className="bg-[#8527CD] text-white"
+                  className="bg-[#8527CD] text-white px-4 py-2 rounded-xl"
                 >
                   Register/Login
-                </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </nav>
-      <nav className=" py-4  hidden lg:flex">
+      <nav className=" py-4  hidden lg:flex items-center">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-10 items-center w-full ">
             <Link to={"/"}>Home</Link>
             <Link to={""}>Sell</Link>
             <Link to={""}>Hottest Deals</Link>
-            <Button color="" endContent={<RateIcon />} className="">
+            <button color="" className=" flex gap-2 px-4 py-2 items-center">
+              <RateIcon />
               Ratings
-            </Button>
-            <Button color="" endContent={<HelpIcon />} className="">
+            </button>
+            <button color="" className="flex gap-2 px-4 py-2 items-center">
+              <HelpIcon />
               Need Help
-            </Button>
+            </button>
             <div className="flex gap-6 mx-4">
               <Link to={""} className="text-[#8527CD]">
                 Goods
@@ -83,9 +84,13 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="flex gap-10 items-center w-full text-white ">
             <Link to={""}>
-              <Button color="" startContent={<RateIcon />} className="">
+              <button
+                color=""
+                className="flex px-4 py-2 items-center gap-2 justify-center text-center "
+              >
+                <RateIcon />
                 Category
-              </Button>
+              </button>
             </Link>
             <Link to={""}>Fashion</Link>
             <Link to={""}>Electronics</Link>
