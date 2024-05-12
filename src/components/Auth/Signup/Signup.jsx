@@ -9,20 +9,18 @@ import { FaTwitter, FaGoogle } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
-import { FaTransgender } from 'react-icons/fa';
+import { FaTransgender } from "react-icons/fa";
 import { AiTwotoneMail } from "react-icons/ai";
 import { PiPasswordDuotone, PiTornadoBold } from "react-icons/pi";
 // CSS imports
 import "../Login/LoginPage";
-import widths from "../animatedWidth"
+import widths from "../animatedWidth";
 
 import "../Login/LoginPage.css";
 export default function Signup() {
 	const [showPassword, setShowPassword] = useState(false);
 	const [animatedWidth, setAnimatedWidth] = useState("w-full");
-	
-	
-	
+
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			// Generate a random index excluding the current index
@@ -77,7 +75,7 @@ export default function Signup() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll ">
+			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll hide-scrollbar">
 				<img src="./images/logo.png" className="w-24 mt-72" alt=" App Logo" />
 
 				<div className="flex flex-col  md:my-auto ">
@@ -85,7 +83,6 @@ export default function Signup() {
 						{/* back button  */}
 
 						<div className="flex items-center gap-1  w-24">
-				
 							<div
 								className={`rounded-full duration-500 bg-purple-700 h-1  ${animatedWidth}`}
 							></div>
@@ -127,22 +124,19 @@ export default function Signup() {
 							</div>
 
 							{/* gender */}
-				
 
-<div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-    <FaTransgender className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
+							<div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
+								<FaTransgender className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
 								<select className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm text-gray-color">
 									<option value="">Select Your Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-    </select>
-</div>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
 							{/* age range */}
 							<div className="relative mt-6 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-							<PiTornadoBold 
-									className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color"
-								/>
+								<PiTornadoBold className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
 								<select className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm text-gray-color">
 									<option value="">Select Age Range</option>
 									<option value="18-24">18-24</option>
@@ -156,9 +150,7 @@ export default function Signup() {
 
 							{/* address */}
 							<div className="relative mt-6 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-							<GoLocation 
-									className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color"
-								/>
+								<GoLocation className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
 								<input
 									type="text"
 									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"

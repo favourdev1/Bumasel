@@ -72,7 +72,7 @@ export default function LoginPage() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll ">
+			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll hide-scrollbar ">
 				<img src="./images/logo.png" className="w-24 " alt=" App Logo" />
 				<div className="flex flex-col ">
 					<div className="pb-10">

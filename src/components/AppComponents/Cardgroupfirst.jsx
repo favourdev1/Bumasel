@@ -7,7 +7,7 @@ import GameController from "../Icon/GameController.png";
 import WellBuiltWoman from "../Icon/Well-builtWoman.png";
 import NewSneakers from "../Icon/NewSneakers.png";
 import Womanincost from "../Icon/Womanincoat.png";
-import Rectangle from "../Icon/Rectangle.png";
+// import Rectangle from "../Icon/Rectangle.png";
 import BlackTop from "../Icon/BlackTop.png";
 import Vector1 from "../Icon/Vector1.png";
 import Vector2 from "../Icon/Vector2.png";
@@ -18,17 +18,17 @@ export default function Cardgroupfirst() {
   const list = [
     {
       title: "Female Sports Wear",
-      img: WellBuiltWoman,
+      img: "./images/WellBuiltWoman.png",
       price: "N30,000",
     },
     {
       title: "TPS5 Gaming Dual Pad ",
-      img: GameController,
+      img: "./images/GameController.png",
       price: "N15,000",
     },
     {
       title: "Ijaw Traditional wear",
-      img: AfricanMan,
+      img: "./images/AfricanMan.png",
       price: "N8,500",
     },
     {
@@ -86,7 +86,7 @@ export default function Cardgroupfirst() {
       </div>
 
       <div className="py-14 relative w-full  h-screen">
-        <img src={Rectangle} alt="" className="absolute w-full h-[63%] " />
+        <img src="./Icon/Rectangle.png" alt="" className="absolute w-full h-[63%] " />
         <div className="w-full flex flex-col">
           <div className="bg-white p-4 absolute left-10 top-28 mt-4  w-[45%]">
             <p className="text-4xl text-[#8527CD]">

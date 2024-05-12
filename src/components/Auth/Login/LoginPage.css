@@ -1,10 +1,20 @@
-body{
+/* body{
     overflow: hidden !important;
-}
+} */
 
 
 /* Scrollbar Track */
-::-webkit-scrollbar {
-    width: 0px; /* Width of the scrollbar */
+/* ::-webkit-scrollbar {
+    width: 0px; 
+  } */
+  
+
+
+  .hide-scrollbar {
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
   }
   
+  .hide-scrollbar::-webkit-scrollbar {
+    width: 0px; /* For Chrome, Safari, and Opera */
+  }
