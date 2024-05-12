@@ -51,7 +51,7 @@ export default function LoginPage() {
 				open={openForgotPasswordModal}
 				setOpen={setOpenForgotPasswordModal}
 			/>
-			<VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} />
+			{/* <VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} /> */}
 			<ResetPassword open={open} setOpen={setOpen} />
 			<div className="hidden  lg:flex lg:w-2/5 relative overflow-hidden h-full  items-center">
 				<div className="fixed h-[90vh] relative ">
@@ -78,12 +78,12 @@ export default function LoginPage() {
 					<div className="pb-10">
 						{/* back button  */}
 
-						<div className="flex items-center gap-1 w-1/2">
+						<div className="flex items-center gap-1  w-24">
 				
 							<div
-								className={`rounded-full duration-500 bg-purple-700 h-1.5  ${animatedWidth}`}
+								className={`rounded-full duration-500 bg-purple-700 h-1  ${animatedWidth}`}
 							></div>
-							<div className="rounded-full bg-slate-100 h-1.5 flex-1 "></div>
+							<div className="rounded-full bg-slate-100 h-1 flex-1 "></div>
 						</div>
 					</div>
 					<h2 className="text-[#201925] font-bold text-3xl">

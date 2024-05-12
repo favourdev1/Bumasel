@@ -14,10 +14,28 @@ import { AiTwotoneMail } from "react-icons/ai";
 import { PiPasswordDuotone, PiTornadoBold } from "react-icons/pi";
 // CSS imports
 import "../Login/LoginPage";
+import widths from "../animatedWidth"
+
 import "../Login/LoginPage.css";
 export default function Signup() {
 	const [showPassword, setShowPassword] = useState(false);
+	const [animatedWidth, setAnimatedWidth] = useState("w-full");
+	
+	
+	
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			// Generate a random index excluding the current index
+			let randomIndex;
+			do {
+				randomIndex = Math.floor(Math.random() * widths.length);
+			} while (randomIndex === widths.indexOf(animatedWidth));
 
+			setAnimatedWidth(widths[randomIndex]);
+		}, 2000);
+
+		return () => clearInterval(intervalId);
+	}, [animatedWidth, widths]);
 	const showRegister = () => {
 		window.location.href = "/login";
 	};
@@ -66,9 +84,12 @@ export default function Signup() {
 					<div className="pb-10">
 						{/* back button  */}
 
-						<div className="flex items-center gap-1 w-1/2">
-							<div className="rounded-full bg-purple-700 h-1.5 w-full"></div>
-							<div className="rounded-full bg-slate-100 h-1.5 w-full "></div>
+						<div className="flex items-center gap-1  w-24">
+				
+							<div
+								className={`rounded-full duration-500 bg-purple-700 h-1  ${animatedWidth}`}
+							></div>
+							<div className="rounded-full bg-slate-100 h-1 flex-1 "></div>
 						</div>
 					</div>
 					<h2 className="text-[#201925] font-bold text-3xl">
