@@ -116,7 +116,7 @@ function Footer() {
 					</div>
 
 					<p className="text-center text-gray-200 mt-5 ">
-						&copy; Copywrite 2024
+						&copy; Copyright 2024
 					</p>
 				</div>
 			</div>
