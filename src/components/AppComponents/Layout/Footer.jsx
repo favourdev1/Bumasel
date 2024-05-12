@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import Rectangle from "../../Icon/Rectangle.png";
+
 import { Link } from "react-router-dom";
 import { GrInstagram } from "react-icons/gr";
 import { ImFacebook2 } from "react-icons/im";
@@ -10,7 +10,7 @@ function Footer() {
 		<div className="relative ">
 			<div
 				className="bg-cover  mx-auto   bg-center  relative"
-				style={{ backgroundImage: `url(${Rectangle})` }}
+				style={{ backgroundImage: `url(${'/images/rectangle.png'})` }}
 			>
 				<div className="bg-black/30 z-10 h-full w-full top-0 pt-16 pb-5">
 					{/* Overlay Text */}
@@ -29,7 +29,7 @@ function Footer() {
 									<div className="absolute inset-y-0 right-1 flex items-center ">
 										<button
 											type="submit"
-											className="text-gray-300 text-sm bg-purple-700 hover:text-white focus:outline-none px-4 py-2 rounded-3xl"
+											className="text-white text-sm bg-purple-800 hover:text-white focus:outline-none px-4 py-2 rounded-3xl"
 										>
 											Subscribe
 										</button>
