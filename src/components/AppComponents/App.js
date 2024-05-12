@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div className="ml-4 lg:flex justify-center pt-6 items-center md:ml-6  w-full hidden">
-        <div className="relative w-1/2">
+        <div className="relative w-1/2 hidden lg:block">
           <input
             type="text"
             value={searchQuery}

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TestComponent from "./components/TestComponent";
 import LoginPage from "./components/Login/LoginPage";
 import Mainlayout from "./components/AppComponents/Layout/Mainlayout";
+import CardDetails from "./components/AppComponents/CardDetails";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path="/login" element={<LoginPage />} />
         <Route element={<Mainlayout />}>
           <Route path="/" element={<App />} />
+          <Route path="/details/:id" element={<CardDetails />} />
         </Route>
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>

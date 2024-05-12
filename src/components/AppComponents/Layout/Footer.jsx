@@ -1,6 +1,8 @@
 import React from "react";
 import Rectangle from "../../Icon/Rectangle.png";
 import { Link } from "react-router-dom";
+import Vector from "../../Icon/Vector.png";
+import Vector4 from "../../Icon/vector4.png";
 
 function Footer() {
   return (
@@ -89,8 +91,16 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="bg-red-200 items-end flex flex-col  ">
-              <p>follow us on social media</p>
+            <div className="items-end flex flex-col mt-24 mr-10">
+              <p>Follow us on social media</p>
+              <div className="flex gap-4  w-1/2 px-3  mt-2">
+                <a href="#">
+                  <img src={Vector} alt="" />
+                </a>
+                <a href="#">
+                  <img src={Vector4} alt="" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

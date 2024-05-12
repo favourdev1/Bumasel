@@ -1,11 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import HeartIcon from "../Icon/HeartIcon";
-import Underware from "../Icon/Underware.png";
-import AfricanMan from "../Icon/AfricanMan.png";
-import BlackHeadphone from "../Icon/BlackHeadphone.png";
-import GameController from "../Icon/GameController.png";
-import WellBuiltWoman from "../Icon/Well-builtWoman.png";
-import NewSneakers from "../Icon/NewSneakers.png";
 import Womanincost from "../Icon/Womanincoat.png";
 import Rectangle from "../Icon/Rectangle.png";
 import BlackTop from "../Icon/BlackTop.png";
@@ -13,83 +8,53 @@ import Vector1 from "../Icon/Vector1.png";
 import Vector2 from "../Icon/Vector2.png";
 import Vector3 from "../Icon/Vector3.png";
 import Star from "../Icon/Star1.png";
+import CardData from "./CardData";
 
 export default function Cardgroupfirst() {
-  const list = [
-    {
-      title: "Female Sports Wear",
-      img: WellBuiltWoman,
-      price: "N30,000",
-    },
-    {
-      title: "TPS5 Gaming Dual Pad ",
-      img: GameController,
-      price: "N15,000",
-    },
-    {
-      title: "Ijaw Traditional wear",
-      img: AfricanMan,
-      price: "N8,500",
-    },
-    {
-      title: "Male underwear",
-      img: Underware,
-      price: "N5,000",
-    },
-    {
-      title: "Nike Airforce Jordan 1s",
-      img: NewSneakers,
-      price: "N30,000",
-    },
-    {
-      title: "Sony Gaming Headset",
-      img: BlackHeadphone,
-      price: "N21,000",
-    },
-  ];
-
   return (
     <div className="container mx-auto px-10">
-      <div className="w-full flex justify-between items-center mb-4">
+      <div className="w-full lg:flex justify-between items-center mb-4 hidden">
         <p className="text-xl font-bold">Hot deals</p>
         <button className="text-sm px-3 py-1 rounded bg-blue-500 text-white">
           Sort
         </button>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {list.map((item, index) => (
-          <div
-            key={index}
-            className="bg-[#FAF7FF] transform transition-transform duration-300 hover:scale-105 shadow-md rounded-md"
-          >
-            <div className="overflow-hidden items-center justify-center flex w-full">
-              <img
-                alt={item.title}
-                className="  h-[300px] object-center"
-                src={item.img}
-              />
-            </div>
-            <div className="flex justify-between p-4 bg-white">
-              <div className="">
-                <b>{item.title}</b>
-                <p className="text-gray-300 mt-3">price</p>
-                <p className="text-black  mt-1 font-bold">{item.price}</p>
+      <div className="lg:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 hidden">
+        {CardData.map((item, index) => (
+          <Link key={index} to={`/details/${index}`}>
+            <div
+              key={index}
+              className="bg-[#FAF7FF] transform transition-transform duration-300 hover:scale-105 shadow-md rounded-md"
+            >
+              <div className="overflow-hidden items-center justify-center flex w-full">
+                <img
+                  alt={item.title}
+                  className="  h-[300px] object-center"
+                  src={item.img}
+                />
               </div>
-              <div>
-                <button className="p-4 text-white rounded-lg bg-[#8527CD]">
-                  <HeartIcon />
-                </button>
+              <div className="flex justify-between p-4 bg-white">
+                <div className="">
+                  <b>{item.title}</b>
+                  <p className="text-gray-300 mt-3">price</p>
+                  <p className="text-black  mt-1 font-bold">{item.price}</p>
+                </div>
+                <div>
+                  <button className="p-4 text-white rounded-lg bg-[#8527CD]">
+                    <HeartIcon />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
       <div className="py-14 relative w-full  h-screen">
         <img src={Rectangle} alt="" className="absolute w-full h-[63%] " />
         <div className="w-full flex flex-col">
-          <div className="bg-white p-4 absolute left-10 top-28 mt-4  w-[45%]">
-            <p className="text-4xl text-[#8527CD]">
+          <div className="lg:bg-white  p-4 absolute left-10 top-28 mt-4  lg:w-[45%]">
+            <p className="lg:text-4xl text-xl lg:text-[#8527CD] text-white">
               Get 50% discount when you buy clothes from us today
             </p>
             <button className="flex text-center items-center pl-3 pr-1 gap-3 mt-8 bg-[#8527CD] text-white text-xl rounded-3xl">
@@ -99,10 +64,10 @@ export default function Cardgroupfirst() {
               </div>
             </button>
           </div>
-          <p className="text-white text-xl absolute top-[20rem] left-10 w-[30%]">
+          <p className="text-white text-xl absolute top-[20rem] left-10 w-[30%] hidden lg:block">
             Purchase clothing from us today and receive a 50% discount.
           </p>
-          <div className=" w-44 h-44 border-5 border-[#8527CD] rounded-lg bg-white left-[40%] top-[15rem] absolute">
+          <div className="hidden lg:block w-44 h-44 border-5 border-[#8527CD] rounded-lg bg-white left-[40%] top-[15rem] absolute">
             <img src={BlackTop} alt="" className="w-44 h-44" />
           </div>
           <img
@@ -135,31 +100,33 @@ export default function Cardgroupfirst() {
         </button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
-        {list.map((item, index) => (
-          <div
-            key={index}
-            className="bg-[#FAF7FF] transform transition-transform duration-300 hover:scale-105 shadow-md rounded-md"
-          >
-            <div className="overflow-hidden items-center justify-center flex w-full">
-              <img
-                alt={item.title}
-                className="  h-[300px] object-center"
-                src={item.img}
-              />
-            </div>
-            <div className="flex justify-between p-4 bg-white">
-              <div className="">
-                <b>{item.title}</b>
-                <p className="text-gray-300 mt-3">price</p>
-                <p className="text-black  mt-1 font-bold">{item.price}</p>
+        {CardData.map((item, index) => (
+          <Link key={index} to={`/details/${index}`}>
+            <div
+              key={index}
+              className="bg-[#FAF7FF] transform transition-transform duration-300 hover:scale-105 shadow-md rounded-md"
+            >
+              <div className="overflow-hidden items-center justify-center flex w-full">
+                <img
+                  alt={item.title}
+                  className="  h-[300px] object-center"
+                  src={item.img}
+                />
               </div>
-              <div>
-                <button className="p-4 text-white rounded-lg bg-[#8527CD]">
-                  <HeartIcon />
-                </button>
+              <div className="flex justify-between p-4 bg-white">
+                <div className="">
+                  <b>{item.title}</b>
+                  <p className="text-gray-300 mt-3">price</p>
+                  <p className="text-black  mt-1 font-bold">{item.price}</p>
+                </div>
+                <div>
+                  <button className="p-4 text-white rounded-lg bg-[#8527CD]">
+                    <HeartIcon />
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
