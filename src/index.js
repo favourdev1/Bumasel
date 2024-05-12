@@ -4,13 +4,14 @@ import "./index.css";
 import App from "./components/AppComponents/App";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-// components
-import TestComponent from "./components/TestComponent";
-import LoginPage from "./components/Login/LoginPage";
-import Mainlayout from "./components/AppComponents/Layout/Mainlayout";
-import CardDetails from "./components/AppComponents/CardDetails";
+
+// components 
+import TestComponent from './components/TestComponent';
+import LoginPage from './components/Auth/Login/LoginPage';
+import Signup from './components/Auth/Signup/Signup';
 
 ReactDOM.render(
+
   <React.StrictMode>
     <Router>
       <Routes>
