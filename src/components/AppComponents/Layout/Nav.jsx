@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Logoimg from "../../Icon/Logo.png";
 import { Link } from "react-router-dom";
 import { SearchIcon } from "../SearchIcon.jsx";
 import RateIcon from "../../Icon/RateIcon.jsx";
@@ -7,6 +6,8 @@ import HeartIcon from "../../Icon/HeartIcon.jsx";
 import HelpIcon from "../../Icon/HelpIcon.jsx";
 
 export default function App() {
+const Logoimg = "/images/logo.png";
+
   const [searchQuery, setSearchQuery] = useState("");
   return (
     <div>
