@@ -51,7 +51,7 @@ export default function LoginPage() {
 				open={openForgotPasswordModal}
 				setOpen={setOpenForgotPasswordModal}
 			/>
-			<VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} />
+			{/* <VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} /> */}
 			<ResetPassword open={open} setOpen={setOpen} />
 			<div className="hidden  lg:flex lg:w-2/5 relative overflow-hidden h-full  items-center">
 				<div className="fixed h-[90vh] relative ">
@@ -72,18 +72,18 @@ export default function LoginPage() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll ">
+			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5 flex flex-col px-5 md:p-10   h-full overflow-y-scroll hide-scrollbar ">
 				<img src="./images/logo.png" className="w-24 " alt=" App Logo" />
 				<div className="flex flex-col ">
 					<div className="pb-10">
 						{/* back button  */}
 
-						<div className="flex items-center gap-1 w-1/2">
+						<div className="flex items-center gap-1  w-24">
 				
 							<div
-								className={`rounded-full duration-500 bg-purple-700 h-1.5  ${animatedWidth}`}
+								className={`rounded-full duration-500 bg-purple-700 h-1  ${animatedWidth}`}
 							></div>
-							<div className="rounded-full bg-slate-100 h-1.5 flex-1 "></div>
+							<div className="rounded-full bg-slate-100 h-1 flex-1 "></div>
 						</div>
 					</div>
 					<h2 className="text-[#201925] font-bold text-3xl">

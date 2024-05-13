@@ -1,25 +1,29 @@
+/** @format */
+
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./components/AppComponents/App";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-
-// components 
-import TestComponent from './components/TestComponent';
-import LoginPage from './components/Auth/Login/LoginPage';
-import Signup from './components/Auth/Signup/Signup';
+import "./index.css";
+import HomePage from "./HomePage";
+import LoginPage from "./components/Auth/Login/LoginPage";
+import Signup from "./components/Auth/Signup/Signup";
+import Mainlayout from "./components/AppComponents/Layout/Mainlayout";
+import Sellerspage from "./Pages/Vendors/Sellerspage";
+import ProductPage from "./Pages/Products/ProductPage";
 
 ReactDOM.render(
-
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/test" element={<TestComponent />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<Signup />} />
         <Route element={<Mainlayout />}>
-          <Route path="/" element={<App />} />
-          <Route path="/details/:id" element={<CardDetails />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+
+          {/* your next path should come here  */}
+          <Route path="/sellers" element={<Sellerspage />} />
         </Route>
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
