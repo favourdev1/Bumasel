@@ -59,9 +59,9 @@ const ProductPage = () => {
         </div>
         <div className="lg:w-[40%] w-full">
           <div className="flex py-2 justify-between">
-            <div>
+            <div className="flex">
               {" "}
-              <img src={card.brandLogo} alt="" />
+              <img src={card.brandLogo} alt="" className="w-24 h-10" />
               <p className="font-bold">
                 {card.brand}{" "}
                 <span className="font-thin text-gray-400">-Product brand</span>
