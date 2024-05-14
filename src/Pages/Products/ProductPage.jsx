@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import GlobalContext from "../../components/AppComponents/Layout/GlobalContext";
 import { CiHeart } from "react-icons/ci";
 import { FaArrowLeft, FaStar } from "react-icons/fa";
+import { Transition } from "@headlessui/react";
 const ProductPage = () => {
   const { products } = useContext(GlobalContext);
   const { id } = useParams();
@@ -12,6 +13,9 @@ const ProductPage = () => {
 
   // Initialize quantity state
   const [quantity, setQuantity] = useState(2); // Initial value set to 2
+  // States for modal
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   // Handle incrementing the quantity
   const incrementQuantity = () => {
@@ -32,6 +36,17 @@ const ProductPage = () => {
       setQuantity(newQuantity);
     }
   };
+  // Function to open modal and set selected image
+  const openModal = (img) => {
+    setSelectedImage(img);
+    setShowModal(true);
+  };
+
+  // Function to close modal
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedImage(null);
+  };
 
   return (
     <div className="py-10 mx-auto px-4 xl:px-2 container">
@@ -41,8 +56,8 @@ const ProductPage = () => {
         </Link>
       </div>
       <div className="flex w-full lg:gap-20 gap-5 flex-col lg:flex-row">
-        <div>
-          <div className="w-full lg:w-[40%] overflow-hidden flex flex-row lg:flex-col">
+        <div className="w-full lg:w-[40%]">
+          <div className="w-full overflow-hidden flex flex-row lg:flex-col">
             <div className="w-full items-center justify-center flex flex-col p-10 bg-[#FAF7FF] rounded-xl">
               <div className="flex justify-between w-full">
                 <button className="lg:flex gap-2 bg-white rounded-md p-3 hidden">
@@ -59,34 +74,21 @@ const ProductPage = () => {
               />
             </div>
             <div className="flex lg:justify-between justify-end gap-4 lg:flex-row flex-col pt-6 lg:bg-white bg-[#FAF7FF]  lg:w-full w-[6rem] overflow-hidden">
-              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-                <img
-                  src={card.img1}
-                  alt=""
-                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-                />
-              </div>
-              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-                <img
-                  src={card.img2}
-                  alt=""
-                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-                />
-              </div>
-              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-                <img
-                  src={card.img3}
-                  alt=""
-                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-                />
-              </div>
-              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-                <img
-                  src={card.img4}
-                  alt=""
-                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-                />
-              </div>
+              {[card.img1, card.img2, card.img3, card.img4].map(
+                (img, index) => (
+                  <div
+                    key={index}
+                    className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] flex justify-center items-center bg-white hover:bg-[#e1d5f5] transition-colors duration-300 cursor-pointer"
+                    onClick={() => openModal(img)}
+                  >
+                    <img
+                      src={img}
+                      alt=""
+                      className="object-cover w-{5rem} h-full object-center "
+                    />
+                  </div>
+                )
+              )}
             </div>
           </div>
           <p className="text-gray-400 pt-4">
@@ -199,6 +201,48 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+      {/* Modal */}
+      <Transition
+        show={showModal}
+        as="div"
+        className="fixed inset-0 z-50 overflow-y-auto"
+        enter="transition ease-out duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition ease-in duration-200"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div className="flex items-center justify-center min-h-screen">
+          <Transition.Child
+            as="div"
+            className="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity"
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+            onClick={closeModal}
+          />
+          <Transition.Child
+            as="div"
+            className="bg-white rounded-lg overflow-hidden shadow-xl z-50 max-w-lg w-full "
+            enter="transform transition ease-out duration-300 sm:duration-500"
+            enterFrom="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
+            enterTo="translate-y-0 opacity-100 sm:scale-100"
+            leave="transform transition ease-in duration-200 sm:duration-300"
+            leaveFrom="translate-y-0 opacity-100 sm:scale-100"
+            leaveTo="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
+          >
+            <img
+              src={selectedImage}
+              alt=""
+              className="w-full h-[60%] object-contain"
+            />
+          </Transition.Child>
+        </div>
+      </Transition>
     </div>
   );
 };
