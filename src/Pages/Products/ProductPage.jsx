@@ -52,7 +52,7 @@ const ProductPage = () => {
             </button>
           </div>
           <img
-            src={"./images/NewSneakers.png"}
+            src={card.img}
             alt=""
             className="object-contain h-[480px] object-center w-[285px] p-10"
           />
