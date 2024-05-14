@@ -51,7 +51,7 @@ export default function HomePage() {
 
       <div className="py-14 w-full  ">
         <div className="relative ">
-				<img src="./images/Frame_52.png" alt="" className=" w-full h-max " />
+				<img src="/images/Frame_52.png" alt="" className=" w-full h-max " />
 
 				<div className=" pr-4 absolute left-20 top-1/4 mt-4  w-[45%]">
 					<p className="md:text-2xl xl:text-4xl text-[#8527CD]">

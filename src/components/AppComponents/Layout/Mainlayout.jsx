@@ -5,9 +5,7 @@ import { Outlet } from "react-router-dom";
 import GlobalContext from "./GlobalContext";
 
 const Mainlayout = () => {
-  const text = "sfnslfskndf"
-  const hello = "hello"
-  
+
   const products = [
     {
       title: "Female Sports Wear",
@@ -67,7 +65,7 @@ const Mainlayout = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <GlobalContext.Provider value={{ text, hello, searchQuery,products, setSearchQuery }}>
+    <GlobalContext.Provider value={{  searchQuery,products, setSearchQuery }}>
     
       <div>
         <Nav /> 

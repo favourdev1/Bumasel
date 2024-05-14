@@ -20,6 +20,7 @@ ReactDOM.render(
 				<Route element={<Mainlayout />}>
 					<Route path="/" element={<HomePage />} />
 					{/* your next path should come here  */}
+					
 					<Route path="/sellers" element={<Sellerspage />} />
 				</Route>
 				<Route path="*" element={<div>404 Not Found</div>} />
