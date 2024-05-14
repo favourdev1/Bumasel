@@ -205,7 +205,7 @@ const ProductPage = () => {
       <Transition
         show={showModal}
         as="div"
-        className="fixed inset-0 z-50 overflow-y-auto"
+        className="fixed inset-0 z-10 overflow-y-auto"
         enter="transition ease-out duration-300"
         enterFrom="opacity-0"
         enterTo="opacity-100"
@@ -216,7 +216,7 @@ const ProductPage = () => {
         <div className="flex items-center justify-center min-h-screen">
           <Transition.Child
             as="div"
-            className="fixed inset-0 bg-gray-900 bg-opacity-50 transition-opacity"
+            className="fixed inset-0  bg-gray-500 bg-opacity-75 transition-opacity backdrop-blur-xl bg-white/10 "
             enter="ease-out duration-300"
             enterFrom="opacity-0"
             enterTo="opacity-100"
@@ -227,7 +227,7 @@ const ProductPage = () => {
           />
           <Transition.Child
             as="div"
-            className="bg-white rounded-lg overflow-hidden shadow-xl z-50 max-w-lg w-full "
+            className="bg-white rounded-lg overflow-hidden shadow-xl z-10 max-w-lg w-full "
             enter="transform transition ease-out duration-300 sm:duration-500"
             enterFrom="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
             enterTo="translate-y-0 opacity-100 sm:scale-100"
