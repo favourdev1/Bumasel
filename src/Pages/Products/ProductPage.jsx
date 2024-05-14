@@ -41,52 +41,58 @@ const ProductPage = () => {
         </Link>
       </div>
       <div className="flex w-full lg:gap-20 gap-5 flex-col lg:flex-row">
-        <div className="w-full lg:w-[40%] overflow-hidden flex flex-row lg:flex-col">
-          <div className="w-full items-center justify-center flex flex-col p-10 bg-[#FAF7FF] rounded-xl">
-            <div className="flex justify-between w-full">
-              <button className="flex gap-2 bg-white rounded-md p-3">
-                <FaStar className="w-5 h-5" /> Highest Rated
-              </button>
-              <button>
-                <CiHeart />
-              </button>
+        <div>
+          <div className="w-full lg:w-[40%] overflow-hidden flex flex-row lg:flex-col">
+            <div className="w-full items-center justify-center flex flex-col p-10 bg-[#FAF7FF] rounded-xl">
+              <div className="flex justify-between w-full">
+                <button className="lg:flex gap-2 bg-white rounded-md p-3 hidden">
+                  <FaStar className="w-5 h-5" /> Highest Rated
+                </button>
+                <button className="hidden lg:flex">
+                  <CiHeart />
+                </button>
+              </div>
+              <img
+                src={card.img}
+                alt=""
+                className="object-contain lg:h-[480px] h-[300px] object-center w-[285px] p-10"
+              />
             </div>
-            <img
-              src={card.img}
-              alt=""
-              className="object-contain h-[480px] object-center w-[285px] p-10"
-            />
+            <div className="flex lg:justify-between justify-end gap-4 lg:flex-row flex-col pt-6 lg:bg-white bg-[#FAF7FF]  lg:w-full w-[6rem] overflow-hidden">
+              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
+                <img
+                  src={card.img1}
+                  alt=""
+                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
+                />
+              </div>
+              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
+                <img
+                  src={card.img2}
+                  alt=""
+                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
+                />
+              </div>
+              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
+                <img
+                  src={card.img3}
+                  alt=""
+                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
+                />
+              </div>
+              <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
+                <img
+                  src={card.img4}
+                  alt=""
+                  className="object-coontain w-[4rem] h-full  object-center  ml-4 "
+                />
+              </div>
+            </div>
           </div>
-          <div className="flex lg:justify-between justify-end gap-4 lg:flex-row flex-col pt-6 lg:bg-white bg-[#FAF7FF]  lg:w-full w-[6rem] overflow-hidden">
-            <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-              <img
-                src={card.img1}
-                alt=""
-                className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-              />
-            </div>
-            <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-              <img
-                src={card.img2}
-                alt=""
-                className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-              />
-            </div>
-            <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-              <img
-                src={card.img3}
-                alt=""
-                className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-              />
-            </div>
-            <div className="w-[6rem] h-[6rem] rounded-xl lg:bg-[#FAF7FF] bg-white hover:bg-[#e1d5f5] transition-colors duration-300">
-              <img
-                src={card.img4}
-                alt=""
-                className="object-coontain w-[4rem] h-full  object-center  ml-4 "
-              />
-            </div>
-          </div>
+          <p className="text-gray-400 pt-4">
+            Goods especially edible products are adviced to be 1 - 3km away from
+            present location
+          </p>
         </div>
         <div className="lg:w-[40%] w-full">
           <div className="flex py-2 justify-between">
@@ -183,9 +189,14 @@ const ProductPage = () => {
               <p>{card.storeContact}</p>
             </div>
           </div>
-          <button className="w-full text-center text-white bg-purple-700 rounded-md py-2">
-            Finsh Order
-          </button>
+          <div className="flex gap-6">
+            <button className=" py-2 lg:hidden block">
+              <CiHeart />
+            </button>
+            <button className="w-full text-center text-white bg-purple-700 rounded-md py-2">
+              Finsh Order
+            </button>
+          </div>
         </div>
       </div>
     </div>
