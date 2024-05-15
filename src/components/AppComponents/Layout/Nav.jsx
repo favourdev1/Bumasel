@@ -9,16 +9,14 @@ import { LuMenu } from "react-icons/lu";
 import { useContext } from "react";
 import GlobalContext from "./GlobalContext";
 export default function Nav() {
-
-
   const [checked, setChecked] = useState(false);
 
   const handleChange = (checked) => {
     setChecked(checked);
   };
 
-  // list of categories 
-  const categories = [  
+  // list of categories
+  const categories = [
     "Fashion",
     "Electronics",
     "Phones",
@@ -28,7 +26,6 @@ export default function Nav() {
     "Kitchen Appliances",
     "Beauty",
     "Others",
-
   ];
   const { searchQuery, setSearchQuery } = useContext(GlobalContext);
 
@@ -39,8 +36,11 @@ export default function Nav() {
           <div className="flex justify-between items-center w-full ">
             <div className="flex-shrink-0 ">
               <Link to={"/"} className=" text-lg font-bold">
-              <img src="./images/logo.png" className="w-24 " alt=" App Logo" />
-
+                <img
+                  src="./images/logo.png"
+                  className="w-24 "
+                  alt=" App Logo"
+                />
               </Link>
             </div>
             <div className="ml-4 flex-1 flex items-center md:ml-6 ">
@@ -68,7 +68,7 @@ export default function Nav() {
                   color=""
                   className="bg-[#FAF7FF] text--purple-700 flex items-center gap-2 rounded-xl px-4 py-2 text-sm hover:bg-purple-700 hover:text-white duration-500"
                 >
-                <AiTwotoneHeart />
+                  <AiTwotoneHeart />
                   Saved
                 </button>
                 <Link
@@ -86,36 +86,67 @@ export default function Nav() {
       <nav className=" py-2  mt-20 hidden lg:block items-center text-sm justify-start">
         <div className="max-w-7xl mx-auto px-4 ">
           <div className="flex gap-5 items-center w-full ">
-            <Link className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold" to={"/"}>Home</Link>
-            <Link className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold" to={""}>Sell</Link>
-            <Link className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold" to={""}>Hottest Deals</Link>
-            <button color="" className=" flex gap-2 px-4 py-2 items-center rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold focus:border-0 focus:outline-none focus:ring-0">
-            <AiTwotoneStar  />
+            <Link
+              className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold"
+              to={"/"}
+            >
+              Home
+            </Link>
+            <Link
+              className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold"
+              to={""}
+            >
+              Sell
+            </Link>
+            <Link
+              className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold"
+              to={""}
+            >
+              Hottest Deals
+            </Link>
+            <button
+              color=""
+              className=" flex gap-2  items-center rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold focus:border-0 focus:outline-none focus:ring-0"
+            >
+              <AiTwotoneStar />
               Ratings
             </button>
-            <button color="" className="flex gap-2 px-4 py-2 items-center rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold focus:border-0 focus:outline-none focus:ring-0">
-            <IoHelpCircleOutline className="w-5 h-5"/>
+            <button
+              color=""
+              className="flex gap-2 px-4 py-2 items-center rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold focus:border-0 focus:outline-none focus:ring-0"
+            >
+              <IoHelpCircleOutline className="w-5 h-5" />
               Need Help
             </button>
             <div className="flex items-center gap-3 mx-4">
-      
-   <span className={!checked ? 'text-purple-700 font-bold duration-500' : ''}>Goods</span>
-        <Switch  
-          onChange={handleChange} 
-          checked={checked} 
-          offColor="#eee" 
-          onColor="#eee" 
-          uncheckedIcon={false} 
-                  checkedIcon={false} 
-                  height={14}
-                  width={32}
-                  handleDiameter={18}
-                  offHandleColor="#8529CD" 
-               
-                  onHandleColor="#8529CD" 
-                />
-                <span className={checked ? 'text-purple-700 font-bold duration-500' : ''}> Services</span>
-    
+              <span
+                className={
+                  !checked ? "text-purple-700 font-bold duration-500" : ""
+                }
+              >
+                Goods
+              </span>
+              <Switch
+                onChange={handleChange}
+                checked={checked}
+                offColor="#eee"
+                onColor="#eee"
+                uncheckedIcon={false}
+                checkedIcon={false}
+                height={14}
+                width={32}
+                handleDiameter={18}
+                offHandleColor="#8529CD"
+                onHandleColor="#8529CD"
+              />
+              <span
+                className={
+                  checked ? "text-purple-700 font-bold duration-500" : ""
+                }
+              >
+                {" "}
+                Services
+              </span>
             </div>
           </div>
         </div>
@@ -123,22 +154,24 @@ export default function Nav() {
       <nav className="  justify-start  hidden lg:flex bg-purple-700 w-full">
         <div className="max-w-7xl mx-auto px-4 w-full text-sm">
           <div className="flex gap-x-7 items-center w-full text-white ">
-            <Link to={""}   className="flex px-4 hover:bg-purple-600/50 duration-500 items-center gap-2 justify-center  py-4 text-center "
-              >
-               <LuMenu className="h-5 w-5"/>
-                Category
-             
+            <Link
+              to={""}
+              className="flex px-4 hover:bg-purple-600/50 duration-500 items-center gap-2 justify-center  py-4 text-center "
+            >
+              <LuMenu className="h-5 w-5" />
+              Category
             </Link>
 
             {/* loop through the categories  */}
             {categories.map((category, index) => (
-              <Link key={index} to={""}  className=" px-4  hover:bg-purple-600/50 duration-500 h-full items-center justify-center py-4 text-center w-max whitespace-nowrap"
-                >
-                  {category}
-           
+              <Link
+                key={index}
+                to={""}
+                className=" px-4  hover:bg-purple-600/50 duration-500 h-full items-center justify-center py-4 text-center w-max whitespace-nowrap"
+              >
+                {category}
               </Link>
             ))}
-          
           </div>
         </div>
       </nav>
