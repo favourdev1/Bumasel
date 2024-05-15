@@ -11,6 +11,7 @@ import Signup from "./components/Auth/Signup/Signup";
 import Mainlayout from "./components/AppComponents/Layout/Mainlayout";
 import Sellerspage from "./Pages/Vendors/Sellerspage";
 import ProductPage from "./Pages/Products/ProductPage";
+import ProfilePage from "./Pages/Store/ProfilePage"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.render(
         <Route element={<Mainlayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
 
           {/* your next path should come here  */}
           <Route path="/sellers" element={<Sellerspage />} />

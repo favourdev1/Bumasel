@@ -183,10 +183,14 @@ const Mainlayout = () => {
     },
   ];
 
+  const profile = [
+    {}
+  ]
+
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <GlobalContext.Provider value={{ text, hello, searchQuery,products, setSearchQuery }}>
+    <GlobalContext.Provider value={{ text, hello, searchQuery,products,profile, setSearchQuery }}>
     
       <div>
         <Nav /> 
