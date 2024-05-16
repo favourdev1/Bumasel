@@ -1,0 +1,22 @@
+[
+    status:"error" //error success 
+    message:""//message
+    data:[
+        [
+            id:""//id
+            name:""//name
+            age:""//age
+        ]
+    ]//data
+]
+Get
+post
+put
+delete
+
+CRUD
+
+create =>POST
+ read=>GET
+ update =>PUT
+  delete =>DELETE
