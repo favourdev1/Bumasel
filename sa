@@ -2,11 +2,18 @@
     status:"error" //error success 
     message:""//message
     data:[
-        [
+      uder:  [
             id:""//id
             name:""//name
             age:""//age
-        ]
+        ],
+        profile:{
+            id:""//id
+            user_id:""//user_id
+            address:""//address
+            phone:""//phone
+        
+        }
     ]//data
 ]
 Get

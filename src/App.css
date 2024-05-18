@@ -29,3 +29,13 @@ input:-internal-autofill-selected{
 ::-webkit-scrollbar-track:hover {
   background-color: #f0f0f0; /* Color of the scrollbar track when mouse is over */
 }
+
+.Toastify__toast-body,.Toastify, .Toastify__toast-container .Toastify__toast-container--top-right, .Toastify__toast-icon .Toastify--animate-icon .Toastify__zoom-enter {
+  font-family: 'Nunito Sans', sans-serif !important;
+
+}
+
+body .Toastify__toast-container .Toastify__toast .Toastify__toast-body {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
