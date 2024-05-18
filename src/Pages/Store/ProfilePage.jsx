@@ -8,15 +8,19 @@ import {
   FaInfoCircle,
   FaBriefcase,
   FaLocationArrow,
-  FaLongArrowAltDown
+  FaAngleRight,
+  FaArrowLeft,
 } from "react-icons/fa";
+
 import { BsTelephone } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
 import { AiOutlineBug, AiTwotoneMail } from "react-icons/ai";
 
 export default function ProfilePage({ profile }) {
-  const [checked, setChecked] = useState(false);
+  const [emailChecked, setEmailChecked] = useState(false);
+  const [newsletterChecked, setNewsletterChecked] = useState(false);
   const [formData, setFormData] = useState(profile);
+  const [editSectionOpen, setEditSectionOpen] = useState(false); // State to track if edit section is open on mobile
 
   const handleChangebtn = (e) => {
     const { name, value } = e.target;
@@ -32,16 +36,23 @@ export default function ProfilePage({ profile }) {
     console.log(formData);
   };
 
+  // Handler for email notification switch
   const handleChangeEmail = (checked) => {
-    setChecked(checked);
+    setEmailChecked(checked);
   };
-  const handleChange = (checked) => {
-    setChecked(checked);
+
+  // Handler for newsletter alert switch
+  const handleChangeNewsletter = (checked) => {
+    setNewsletterChecked(checked);
   };
   return (
     <div>
       <div className="container py-10 flex mx-auto px-4 xl:px-2 gap-6 ">
-        <div className="lg:w-[40%] w-full">
+        <div
+          className={`mx-auto w-full lg:w-[40%] ${
+            editSectionOpen ? "hidden" : "block"
+          }`}
+        >
           <p className="font-semibold text-xl">My Account</p>
           <p className="text-gray-500">
             This is were you can edit your profile information
@@ -72,6 +83,18 @@ export default function ProfilePage({ profile }) {
             </div>
           </div>
           <div className="border-t border-b pt-5 pb-4">
+            <div
+              className="flex lg:hidden edit justify-between items-center py-2"
+              onClick={() => setEditSectionOpen(true)}
+            >
+              <div>
+                <p className="font-semibold text-xl">Profile Information</p>
+                <p className="text-gray-500">
+                  This is were you can edit your profile information
+                </p>
+              </div>
+              <FaAngleRight className="" />
+            </div>
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-semibold text-xl">Email Notification</p>
@@ -81,7 +104,7 @@ export default function ProfilePage({ profile }) {
               </div>
               <Switch
                 onChange={handleChangeEmail}
-                checked={checked}
+                checked={emailChecked}
                 offColor="#eee"
                 onColor="#eee"
                 uncheckedIcon={false}
@@ -95,14 +118,14 @@ export default function ProfilePage({ profile }) {
             </div>
             <div className="flex justify-between items-center pt-6">
               <div>
-                <p className="font-semibold text-xl">News Letter Alert</p>
+                <p className="font-semibold text-xl">Newsletter Alert</p>
                 <p className="text-gray-500">
                   Get notification on new articles or events
                 </p>
               </div>
               <Switch
-                onChange={handleChange}
-                checked={checked}
+                onChange={handleChangeNewsletter}
+                checked={newsletterChecked}
                 offColor="#eee"
                 onColor="#eee"
                 uncheckedIcon={false}
@@ -150,12 +173,24 @@ export default function ProfilePage({ profile }) {
             </Link>
           </div>
         </div>
-        <div className=" mx-auto w-full lg:w-[50%] border p-8 rounded-lg ">
-          <h2 className="text-2xl font-bold mb-4"> Profile Information</h2>
-          <p className="text-gray-400">
+        <div
+          className={`mx-auto w-full  lg:w-[50%] profileInfo  border p-8 rounded-lg lg:flex flex-col ${
+            editSectionOpen ? "flex" : "hidden"
+          }`}
+        >
+          <div className="p-5 w-full flex lg:hidden">
+            <Link to={""} onClick={() => setEditSectionOpen(false)}>
+              <FaArrowLeft />
+            </Link>
+          </div>
+          <h2 className="text-2xl font-bold lg:block hidden">
+            {" "}
+            Profile Information
+          </h2>
+          <p className="text-gray-400 mb-4 lg:block hidden">
             This is were you can edit your profile information
           </p>
-          <form onSubmit={handleSubmit} className="w-[80%]">
+          <form onSubmit={handleSubmit} className="lg:w-[80%] w-full">
             <div className="mb-4">
               <label htmlFor="fullname" className="block mb-1">
                 Full Name
@@ -214,7 +249,7 @@ export default function ProfilePage({ profile }) {
                   />
                   Female
                 </label>
-                <label className="inline-flex items-center">
+                <label className="inline-flex items-center mx-2">
                   <input
                     type="radio"
                     name="gender"
@@ -304,7 +339,7 @@ export default function ProfilePage({ profile }) {
                 id="age"
                 name="age"
                 // value={formData.age}
-                onChange={handleChange}
+                onChange={handleChangebtn}
                 className="w-full border rounded-lg px-4 py-2"
               >
                 <option value="18-25">18-25</option>
@@ -314,7 +349,7 @@ export default function ProfilePage({ profile }) {
                 <option value="56+">56+</option>
               </select>
             </div>
-            <div className="flex justify-start">
+            <div className="flex justify-start gap-10">
               <button
                 color=""
                 className="bg-purple-700 text-white flex items-center gap-2 rounded-xl px-4 py-2 text-sm hover:bg-purple-200 hover:text-purple-700 duration-500"
