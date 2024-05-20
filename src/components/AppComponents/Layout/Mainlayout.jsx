@@ -1,7 +1,11 @@
-import {React,useState} from "react";
+import React,{useState} from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useEffect } from "react";
+
 import GlobalContext from "./GlobalContext";
 
 const Mainlayout = () => {
@@ -181,14 +185,42 @@ const Mainlayout = () => {
     },
   ];
 
+  const token = Cookies.get('token');
   const profile = [
     {}
   ]
 
   const [searchQuery, setSearchQuery] = useState("");
 
+  // check if user is loggedin
+  // if user is logged in, get user profile
+
+  const [userProfile, setUserProfile] = useState(null);
+  const apiUrl = process.env.REACT_APP_API_URL;
+  useEffect(() => {
+    // Check if the user is logged in
+
+    if (token) {
+      console.log(token)
+      // If the user is logged in, get the user's profile
+      axios.get(apiUrl + "/get-single-user", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(response => {
+        setUserProfile(response.data.data);
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.error('Error fetching user profile:', error);
+      });
+    }
+  }, []);
+
+  console.log(userProfile)
   return (
-    <GlobalContext.Provider value={{ searchQuery,products,profile, setSearchQuery }}>
+    <GlobalContext.Provider value={{userProfile, token, searchQuery,products,profile, setSearchQuery }}>
     
       <div>
         <Nav /> 

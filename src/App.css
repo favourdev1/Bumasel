@@ -28,6 +28,14 @@ input:-internal-autofill-selected{
 /* Scrollbar Track when mouse is over */
 ::-webkit-scrollbar-track:hover {
   background-color: #f0f0f0; /* Color of the scrollbar track when mouse is over */
+}.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-content.open {
+  max-height: 1000px; /* You might need to adjust this value */
 }
 
 .Toastify__toast-body,.Toastify, .Toastify__toast-container .Toastify__toast-container--top-right, .Toastify__toast-icon .Toastify--animate-icon .Toastify__zoom-enter {
@@ -38,4 +46,12 @@ input:-internal-autofill-selected{
 body .Toastify__toast-container .Toastify__toast .Toastify__toast-body {
   font-family: 'Nunito Sans', sans-serif !important;
 }
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
 
+.accordion-content.open {
+  max-height: 1000px; /* You might need to adjust this value */
+}

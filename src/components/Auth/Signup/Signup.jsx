@@ -26,6 +26,7 @@ import "react-toastify/dist/ReactToastify.css";
 import LoadingState from "../../Props/LoadingState";
 
 
+import Cookies from "js-cookie";
 
 
 
@@ -53,13 +54,26 @@ export default function Signup() {
 			let randomIndex;
 			do {
 				randomIndex = Math.floor(Math.random() * widths.length);
-			} while (randomIndex === widths.indexOf(animatedWidth));
+			} while (randomIndex == widths.indexOf(animatedWidth));
 
 			setAnimatedWidth(widths[randomIndex]);
 		}, 2000);
 
 		return () => clearInterval(intervalId);
 	}, [animatedWidth, widths]);
+
+
+
+
+	useEffect(() => {
+		// Check if the user is already logged in
+		const token = Cookies.get('token');
+		if (token) {
+		  window.location.href = '/';
+		}
+	  }, []);
+	
+  
 	const showRegister = () => {
 		window.location.href = "/login";
 	};

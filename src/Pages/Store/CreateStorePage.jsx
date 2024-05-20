@@ -21,10 +21,10 @@ export default function CreateStorePage() {
     };
 
   return (
-    <div className="absolute   overflow-y-auto top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 backdrop-filter backdrop-blur-lg z-50">
-      <div className=" bg-white p-8 rounded-lg flex flex-col gap-3 w-[40%]">
-        <h2 className="text-2xl font-bold mb-4 w-full text-center">Create Store</h2>
-      <p className="text-gray-400 w-full text-center">Fill In Store Information Below</p>
+    <div className="fixed   overflow-y-auto top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 bautoplaySpeedackdrop-filter backdrop-blur z-50">
+      <div className=" bg-white p-8 rounded-lg flex flex-col gap-3 w-[95%] md:w-[70%] mt-8 lg:w-[60%] xl:w-[30%]">
+        <h2 className="text-2xl font-bold mb-0 w-full text-center">Create Store On Bumasell</h2>
+      <p className="text-gray-400 w-full text-center mb-2">Pleae Fill In Your Store Information Below To Create Your Store</p>
         <div className="mb-4">
           <label htmlFor="Name" className="block mb-1">
             Store Name
@@ -39,7 +39,7 @@ export default function CreateStorePage() {
             />
           </div>
         </div>
-        <div className="mb-4">
+        <div className="mb-2">
           <label htmlFor="Name" className="block mb-1">
             Store Description
           </label>
@@ -53,7 +53,7 @@ export default function CreateStorePage() {
             />
           </div>
         </div>
-        <div className="mb-4">
+        <div className="mb-2">
           <label htmlFor="email" className="block mb-1">
             Email
           </label>
@@ -71,7 +71,7 @@ export default function CreateStorePage() {
             />
           </div>
         </div>
-        <div className="mb-4">
+        <div className="mb-2">
           <label htmlFor="product" className="block mb-1">
             Product Type
           </label>
@@ -87,7 +87,7 @@ export default function CreateStorePage() {
             <option value="books">Books</option>
           </select>
         </div>
-        <div className="mb-4">
+        <div className="mb-2">
           <label htmlFor="Tel" className="block mb-1">
             Phone Number
           </label>

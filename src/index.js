@@ -5,12 +5,16 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./index.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import "./App.css";
 import HomePage from "./HomePage";
 import LoginPage from "./components/Auth/Login/LoginPage";
 import Signup from "./components/Auth/Signup/Signup";
 import Mainlayout from "./components/AppComponents/Layout/Mainlayout";
 import Sellerspage from "./Pages/Vendors/Sellerspage";
 import ProductPage from "./Pages/Products/ProductPage";
+import SearchPage from "./Pages/Search/SearchPage";
 import ProfilePage from "./Pages/Store/ProfilePage"
 import CreateStorePage from "./Pages/Store/CreateStorePage";
 
@@ -23,8 +27,9 @@ ReactDOM.render(
         <Route element={<Mainlayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/search/:search?" element={<SearchPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/createstore" element={<CreateStorePage />} />
+          <Route path="/store/create" element={<CreateStorePage />} />
 
           {/* your next path should come here  */}
           <Route path="/sellers" element={<Sellerspage />} />

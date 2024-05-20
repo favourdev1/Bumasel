@@ -1,13 +1,27 @@
 /** @format */
 
+// React imports
 import React, { useEffect, useState } from "react";
+
+// Third party libraries
 import { FaRegEyeSlash, FaRegEye, FaTwitter, FaGoogle } from "react-icons/fa";
+import { AiTwotoneMail } from "react-icons/ai";
 import { LockClosedIcon } from "@heroicons/react/24/outline";
-import "./LoginPage.css";
+
+// toast lib
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// Local imports
+import widths from "../animatedWidth";
 import ResetPassword from "../ResetPassword/ResetPassword";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import VerifyOtp from "../VerifyOtp/VerifyOtp";
-import widths from "../animatedWidth"
+import LoadingState from "../../Props/LoadingState";
+import "./LoginPage.css";
+import axios from "axios";
+import Cookies from "js-cookie";
+
 export default function LoginPage() {
 	// State declarations
 	const [showPassword, setShowPassword] = useState(false);
@@ -15,12 +29,26 @@ export default function LoginPage() {
 	const [openverifyOTPModal, setopenVerifyOTPModal] = useState(true);
 	const [openForgotPasswordModal, setOpenForgotPasswordModal] = useState(false);
 	const [animatedWidth, setAnimatedWidth] = useState("w-full");
-	
-	
+	const [showLoading, setShowLoading] = useState(false);
+
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	// Function to navigate to registration page
 	const showRegister = () => {
 		window.location.href = "/signup";
 	};
+
+	// check if user is already logged in, if
+	// if yes , redirect to main page
+
+	useEffect(() => {
+		// Check if the user is already logged in
+		const token = Cookies.get("token");
+		if (token) {
+			window.location.href = "/";
+		}
+	}, []);
+
 	useEffect(() => {
 		const intervalId = setInterval(() => {
 			// Generate a random index excluding the current index
@@ -42,11 +70,84 @@ export default function LoginPage() {
 		return () => (document.body.style.overflow = originalStyle);
 	}, []);
 
+	// handle login function
+	function handleLoginButtonClick(event) {
+		if (event) {
+			const userData = {
+				email: email,
+
+				password: password
+			};
+
+			event.preventDefault();
+
+			const apiUrl = process.env.REACT_APP_API_URL;
+
+			const allFieldsFilled = Object.values(userData).every(
+				(field) => field !== ""
+			);
+
+			if (!allFieldsFilled) {
+				toast.error("All fields must be filled out");
+				return;
+			}
+			setShowLoading(true);
+			try {
+				axios
+					.post(apiUrl + "/login", userData)
+					.then((res) => {
+						console.log(res.data);
+						let response = res.data.data;
+						if (response.status == "error") {
+							toast.error(response.message);
+						} else {
+							toast.success(res.data.message);
+							let token = res.data.data.token;
+							// Save the token to a cookie
+							
+							Cookies.set("token", token, { expires: 2 });
+							setTimeout(() => {
+								window.location.href = "/";
+							}, 1000);
+						}
+					})
+					.catch((error) => {
+						toast.error(error.response.data.message);
+						console.log(error.response);
+					})
+					.finally(() => {
+						setShowLoading(false);
+					});
+			} catch (error) {
+				// console.log(error.response.data);
+				toast.error(
+					"An internal error occured, please contact admins for assistance."
+				);
+			}
+		}
+	}
+
 	// ========================================================================
 	// =====================Return Function ====================================
 	// =====================================================================
 	return (
 		<div className="h-screen m-0 bg-white flex items-center  px-3">
+			{showLoading == true && <LoadingState />}
+
+			<ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={true}
+				newestOnTop={true}
+				closeOnClick={true}
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="dark"
+				limit={3}
+				toastStyle={{ fontSize: "14px" }}
+			/>
 			<ForgotPassword
 				open={openForgotPasswordModal}
 				setOpen={setOpenForgotPasswordModal}
@@ -79,7 +180,6 @@ export default function LoginPage() {
 						{/* back button  */}
 
 						<div className="flex items-center gap-1  w-24">
-				
 							<div
 								className={`rounded-full duration-500 bg-purple-700 h-1  ${animatedWidth}`}
 							></div>
@@ -95,13 +195,14 @@ export default function LoginPage() {
 					<form className="mt-8">
 						{/* email */}
 						<div className="relative border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-							<img
-								src="./svg/email.svg"
-								className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700"
+							<AiTwotoneMail
+								className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color"
 								alt="email"
 							/>
 							<input
 								type="text"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
 								className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm" // Add border-transparent and active:border-transparent
 								placeholder="Email Address"
 							/>
@@ -112,6 +213,8 @@ export default function LoginPage() {
 							<LockClosedIcon className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 focus-within:text-purple-700 text-gray-color" />
 							<input
 								type={showPassword ? "text" : "password"}
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
 								className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
 								placeholder="Password"
 								autocomplete="new-password"
@@ -136,6 +239,7 @@ export default function LoginPage() {
 							</p>
 						</div>
 						<button
+							onClick={handleLoginButtonClick}
 							type="submit"
 							className="mt-4 w-full px-4 py-2 bg-purple-700 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:bg-purple-700"
 						>
