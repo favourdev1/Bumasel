@@ -2,5 +2,8 @@
     "search.exclude": {
         "**/node_modules": false
     },
-    "editor.acceptSuggestionOnEnter": "on"
+    "editor.acceptSuggestionOnEnter": "on",
+    "pieces.autocomplete": true,
+    "prettier.eslintIntegration": true,
+    "prettier.stylelintIntegration": true
 }
