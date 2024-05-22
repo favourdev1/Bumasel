@@ -17,7 +17,7 @@ import ProductPage from "./Pages/Products/ProductPage";
 import SearchPage from "./Pages/Search/SearchPage";
 import ProfilePage from "./Pages/Store/ProfilePage"
 import CreateStorePage from "./Pages/Store/CreateStorePage";
-import DashboardPage from "./Pages/Dashboard/DashboardPage";
+import DashboardPage from "./Pages/Vendors/Dashboard/DashboardPage";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -35,7 +35,7 @@ ReactDOM.render(
           {/* your next path should come here  */}
           <Route path="/sellers" element={<Sellerspage />} />
         </Route>
-        <Route  path="/dashboard" element={<DashboardPage />}></Route>
+        <Route  path="/vendors/dashboard" element={<DashboardPage />}></Route>
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
     </Router>

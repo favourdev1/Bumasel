@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+// CreateStorePage.js
+import React, { useState, useContext } from "react";
 import { FaArrowLeft, FaLocationArrow } from "react-icons/fa";
-import {AiTwotoneMail} from "react-icons/ai";
+import { AiTwotoneMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
+import { StoreContext } from '../Vendors/Dashboard/StoreContent';
 
-export default function CreateStorePage() {
+const CreateStorePage = () => {
+  const { addStore } = useContext(StoreContext);
   const [storeName, setStoreName] = useState("");
   const [storeDescription, setStoreDescription] = useState("");
   const [storeEmail, setStoreEmail] = useState("");
@@ -13,18 +16,30 @@ export default function CreateStorePage() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleContinue = () => {
-    // Perform any necessary validation here before showing success modal
+    addStore({
+      name: storeName,
+      description: storeDescription,
+      email: storeEmail,
+      productType,
+      contact: storeContact,
+      address: storeAddress,
+      subscribed: true,
+      dateCreated: new Date().toLocaleDateString(),
+      sales: 0,
+    });
+
     setShowSuccessModal(true);
   };
-   const handleCloseSuccessModal = () => {
-        setShowSuccessModal(false);
-    };
+
+  const handleCloseSuccessModal = () => {
+    setShowSuccessModal(false);
+  };
 
   return (
-    <div className="fixed   overflow-y-auto top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 bautoplaySpeedackdrop-filter backdrop-blur z-50">
-      <div className=" bg-white p-8 rounded-lg flex flex-col gap-3 w-[95%] md:w-[70%] mt-8 lg:w-[60%] xl:w-[30%]">
+    <div className="fixed overflow-y-auto top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 backdrop-filter backdrop-blur z-50">
+      <div className="bg-white p-8 rounded-lg flex flex-col gap-3 w-[95%] md:w-[70%] mt-8 lg:w-[60%] xl:w-[30%]">
         <h2 className="text-2xl font-bold mb-0 w-full text-center">Create Store On Bumasell</h2>
-      <p className="text-gray-400 w-full text-center mb-2">Pleae Fill In Your Store Information Below To Create Your Store</p>
+        <p className="text-gray-400 w-full text-center mb-2">Please Fill In Your Store Information Below To Create Your Store</p>
         <div className="mb-4">
           <label htmlFor="Name" className="block mb-1">
             Store Name
@@ -58,10 +73,7 @@ export default function CreateStorePage() {
             Email
           </label>
           <div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-            <AiTwotoneMail
-              className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color"
-              alt="email"
-            />
+            <AiTwotoneMail className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" alt="email" />
             <input
               type="email"
               className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
@@ -92,8 +104,6 @@ export default function CreateStorePage() {
             Phone Number
           </label>
           <div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-            {/* You can replace the src with the appropriate icon for phone number */}
-
             <BsTelephone className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
             <input
               type="tel"
@@ -109,10 +119,7 @@ export default function CreateStorePage() {
             Address
           </label>
           <div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-            <FaLocationArrow
-              className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color"
-              alt="Address"
-            />
+            <FaLocationArrow className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" alt="Address" />
             <input
               type="text"
               className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
@@ -122,7 +129,6 @@ export default function CreateStorePage() {
             />
           </div>
         </div>
-
         <button
           className="bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-purple-500"
           onClick={handleContinue}
@@ -139,15 +145,16 @@ export default function CreateStorePage() {
             <h2 className="text-2xl font-bold mb-4">Success!</h2>
             <p>Your store has been created successfully.</p>
             <button
-          className="bg-purple-700 w-full text-white px-4 py-2 rounded-md hover:bg-purple-500"
-          onClick={handleContinue}
-        >
-          Continue
-        </button>
+              className="bg-purple-700 w-full text-white px-4 py-2 rounded-md hover:bg-purple-500"
+              onClick={handleCloseSuccessModal}
+            >
+              Close
+            </button>
           </div>
-
         </div>
       )}
     </div>
   );
-}
+};
+
+export default CreateStorePage;

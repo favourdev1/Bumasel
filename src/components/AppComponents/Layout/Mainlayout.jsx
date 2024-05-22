@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
-
+import { StoreProvider } from "../../../Pages/Vendors/Dashboard/StoreContent";
 import GlobalContext from "./GlobalContext";
 
 const Mainlayout = () => {
@@ -221,12 +221,13 @@ const Mainlayout = () => {
   console.log(userProfile)
   return (
     <GlobalContext.Provider value={{userProfile, token, searchQuery,products,profile, setSearchQuery }}>
-    
-      <div>
-        <Nav /> 
-        <Outlet />
-        <Footer />
-      </div>
+          <StoreProvider>
+        <div>
+          <Nav />
+          <Outlet />
+          <Footer />
+        </div>
+      </StoreProvider>
     </GlobalContext.Provider>
   );
 };
