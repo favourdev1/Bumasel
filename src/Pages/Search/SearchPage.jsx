@@ -8,6 +8,8 @@ import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import ProductPage from "../Products/ProductPage";
 import CategoriesFilter from "./components/CategoriesFilter";
+import BrandFilter from "./components/BrandFilter";
+import PriceFilter from "./components/PriceFilter";
 
 function SearchPage() {
 	const { searchQuery, products } = useContext(GlobalContext);
@@ -38,144 +40,11 @@ function SearchPage() {
 						<CategoriesFilter />
 
 						{/* <!-- Price Range Section --> */}
-						<div>
-							<div class="mb-8 border p-4 rounded w-full">
-								<div class="flex items-center justify-between">
-									<h5 class="mb-3">Price range</h5>
-									<p
-										class="text-primary font-bold cursor-pointer"
-										id="applyPricing"
-									>
-										Apply
-									</p>
-								</div>
-								<input
-									type="range"
-									name="pieces"
-									id="inputPieces"
-									multiple
-									min="0"
-									max="100"
-								/>
-								<span id="priceRange-value" class="text-sm"></span>
-							</div>
-						</div>
+						<PriceFilter/>
 						{/* !-- Brands Section --> */}
-						<div class="mb-8 border rounded accordion" id="brandsAccordion">
-							<h5 class="mb-3 font-bold">
-								<button
-									class="accordion-button font-bold"
-									type="button"
-									data-bs-toggle="collapse"
-									data-bs-target="#brandsCollapse"
-									aria-expanded="true"
-									aria-controls="brandsCollapse"
-								>
-									Brands
-								</button>
-							</h5>
-							<div
-								id="brandsCollapse"
-								class="accordion-collapse collapse show"
-								aria-labelledby="brandsHeading"
-								data-bs-parent="#brandsAccordion"
-							>
-								<div class="accordion-body">
-									<div class="form-check mb-2">
-										<input
-											class="form-check-input brand"
-											type="checkbox"
-											value="Brand 1"
-											id="Brand1"
-											checked
-										/>
-										<label class="form-check-label" for="Brand1">
-											Brand 1
-										</label>
-									</div>
-									<div class="form-check mb-2">
-										<input
-											class="form-check-input brand"
-											type="checkbox"
-											value="Brand 2"
-											id="Brand2"
-										/>
-										<label class="form-check-label" for="Brand2">
-											Brand 2
-										</label>
-									</div>
-								</div>
-							</div>
-						</div>
+						<BrandFilter/>
 
-						{/* <!-- Deals Section --> */}
-						<div class="mb-8 border p-4 rounded w-full">
-							<h5 class="mb-3">Deals</h5>
-							<div class="form-check mb-2">
-								<input
-									class="form-check-input"
-									type="checkbox"
-									value=""
-									id="shipping"
-								/>
-								<label class="form-check-label" for="shipping">
-									Shipping
-								</label>
-							</div>
-							<div class="form-check mb-2">
-								<input
-									class="form-check-input"
-									type="checkbox"
-									value=""
-									id="cash_on_delivery"
-								/>
-								<label class="form-check-label" for="cash_on_delivery">
-									Cash On Delivery
-								</label>
-							</div>
-						</div>
-
-						{/* <!-- Rating Section --> */}
-						<div class="accordion" id="ratingAccordion">
-							<div class="accordion-item">
-								<h2 class="accordion-header" id="ratingHeading">
-									<button
-										class="accordion-button"
-										type="button"
-										data-bs-toggle="collapse"
-										data-bs-target="#ratingCollapse"
-										aria-expanded="true"
-										aria-controls="ratingCollapse"
-									>
-										Rating
-									</button>
-								</h2>
-								<div
-									id="ratingCollapse"
-									class="accordion-collapse collapse show"
-									aria-labelledby="ratingHeading"
-									data-bs-parent="#ratingAccordion"
-								>
-									<div class="accordion-body">
-										<div class="form-check mb-2">
-											<input
-												class="form-check-input"
-												type="checkbox"
-												value=""
-												id="ratingFive"
-											/>
-											<label class="form-check-label" for="ratingFive">
-												<i class="bi bi-star-fill text-yellow-400"></i>
-												<i class="bi bi-star-fill text-yellow-400"></i>
-												<i class="bi bi-star-fill text-yellow-400"></i>
-												<i class="bi bi-star-fill text-yellow-400"></i>
-												<i class="bi bi-star-fill text-yellow-400"></i>
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</aside>

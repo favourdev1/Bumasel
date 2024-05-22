@@ -53,13 +53,13 @@ function Footer() {
             <div className="flex flex-col w-full md:w-1/3">
               <div className="flex gap-10">
                 <ul className="list-none flex flex-col gap-y-4">
-                  <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                     <Link to={""}>Privacy & Policy</Link>
                   </li>
-                  <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                     <Link to={""}>Terms & Conditions</Link>
                   </li>
-                  <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                     <Link to={""}>Our Blog</Link>
                   </li>
                 </ul>
@@ -67,36 +67,36 @@ function Footer() {
                 <div>
                   <div className="flex items-center gap-x-10">
                     <ul className="list-none flex flex-col gap-y-4">
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Team</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Sell On Bumasel</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>About us</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Contact us</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>FAQ</Link>
                       </li>
                     </ul>
                     <ul className="list-none flex flex-col gap-y-4">
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={"/"}>Home</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Categories</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Rating</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Need Help</Link>
                       </li>
-                      <li className="text-gray-200 hover:text-gray-800 transition-colors duration-300">
+                      <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Register</Link>
                       </li>
                     </ul>
@@ -106,8 +106,8 @@ function Footer() {
                       Follow us on social media
                     </p>
                     <div className="flex gap-x-3 items-center mt-4">
-                      <GrInstagram className="w-5 h-5" />
-                      <ImFacebook2 className="w-4 h-4" />
+                      <GrInstagram className="w-5 h-5 cursor-pointer" />
+                      <ImFacebook2 className="w-4 h-4 cursor-pointer" />
                     </div>
                   </div>
                 </div>

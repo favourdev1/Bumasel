@@ -1,93 +1,74 @@
-// src/CategoriesFilter.js
 import React, { useState } from 'react';
-import { Transition } from 'react-transition-group';
-import { FiChevronDown, FiChevronUp, FiChevronRight } from 'react-icons/fi';
-
-const CategoriesFilter = () => {
+import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleAccordion = () => {
+  const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const duration = 300;
-
-  const defaultStyle = {
-    transition: `opacity ${duration}ms ease-in-out`,
-    opacity: 0,
-  };
-
-  const transitionStyles = {
-    entering: { opacity: 1 },
-    entered:  { opacity: 1 },
-    exiting:  { opacity: 0 },
-    exited:  { opacity: 0 },
-  };
-
   return (
-    <div className="mb-8 border rounded" id="categoriesFilterCategoriesFilter">
-      <h5 className="mb-3">
-        <button
-          className="accordion-button"
-          type="button"
-          onClick={toggleAccordion}
-          aria-expanded={isOpen}
-          aria-controls="categoriesCollapse"
-        >
-          Categories
-          {isOpen ? <FiChevronUp /> : <FiChevronDown />}
-        </button>
-      </h5>
-      <Transition in={isOpen} timeout={duration}>
-        {state => (
-          <div style={{
-            ...defaultStyle,
-            ...transitionStyles[state]
-          }}>
-            <div
-              id="categoriesCollapse"
-              className="show"
-              aria-labelledby="categoriesHeading"
-              data-bs-parent="#categoriesFilterCategoriesFilter"
-            >
-              <div className="accordion-body">
-                <ul className="nav nav-category pb-0 mb-0" id="categoryCollapseMenu">
-                  <li className="nav-item w-full">
-                    <a
-                      href="#"
-                      className="nav-link Productcategory collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#categoryFlush1"
-                      aria-expanded="false"
-                      data-category-id="Category 1"
-                      aria-controls="categoryFlush1"
-                    >
-                      Category 1
-                      <FiChevronRight />
-                    </a>
-                  </li>
-                  <li className="nav-item w-full">
-                    <a
-                      href="#"
-                      className="nav-link Productcategory collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#categoryFlush2"
-                      aria-expanded="false"
-                      data-category-id="Category 2"
-                      aria-controls="categoryFlush2"
-                    >
-                      Category 2
-                      <FiChevronRight />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        )}
-      </Transition>
+    <div className="w-full border rounded-lg bg-white mb-3 px-2">
+      <p
+        onClick={toggleDropdown}
+        className="w-full py-3 text-left px-4 flex items-center font-semibold justify-between "
+      >
+        Categories
+        <span className={` transition-transform duration-300 cursor-pointer ${isOpen ? 'rotate-180' : ''}`}>
+        <IoIosArrowUp className='w-4 h-4' />
+        </span>
+      </p>
+      <div
+        className={`transition-max-height duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}
+      >
+        <ul className="flex flex-col p-2 space-y-1  ">
+          <li>
+            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Laundry
+            <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
+            
+            </p>
+          </li>
+          <li>
+            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Dishwashers
+            <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
+            
+            </p>
+          </li>
+          <li>
+            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Fridges & Freezers
+            <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
+            
+            </p>
+          </li>
+          <li>
+            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Cooking
+            <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
+            
+            </p>
+          </li>
+          <li>
+            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Small Appliances
+            <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
+            
+            </p>
+          </li>
+          <li>
+            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Garden & DIY
+            <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
+            
+            </p>
+          </li>
+          <li>
+            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Health & Beauty
+            <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
+            
+            </p>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
 
-export default CategoriesFilter;
+export default Dropdown;
