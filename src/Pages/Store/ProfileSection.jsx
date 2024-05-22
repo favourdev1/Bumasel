@@ -59,13 +59,13 @@ import { AiOutlineBug, AiTwotoneMail } from "react-icons/ai";
             <p className="text-gray-500 mt-0">
               This is were you can edit your profile information
             </p>
-            <div className="py-4 flex gap-3 lg:flex-row flex-col">
+            <div className="py-4 flex gap-3 lg:flex-row flex-col items-center">
               <div className="">
-                <img src="" alt="" className="rounded-full w-14 h-14 border" />
+               <img src={(userProfile && userProfile.image) ? userProfile.image : "/images/profilehead.png"} alt="" className="rounded-full w-12 h-12 border" />
               </div>
               <div className="flex flex-col">
-                <p className="text-lg pb-0 mb-0">Chima David</p>
-                <p className="text-gray-500 pb-2">Customer</p>
+                <p className="text-base pb-0 mb-0">Chima David</p>
+                <p className="text-gray-500 ">Customer</p>
               </div>
             </div>
                 <div className="flex gap-4 pr-4 pb-3">

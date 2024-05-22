@@ -1,5 +1,7 @@
 import React from "react"
 export default function LoadingView() {
+
+    return (
     <div className="text-gray-700 container h-screen py-10 text-sm flex mx-auto px-4 xl:px-2 gap-6 animate-pulse">
         <div className="mx-auto w-full lg:w-[30%] h-max rounded-full-xl border pl-4 pr-8 py-8">
             <div className="h-6 bg-gray-300 rounded-full mb-4 w-1/2"></div>
@@ -76,5 +78,5 @@ export default function LoadingView() {
         </div>
     </div>
     
-
+    )
 }

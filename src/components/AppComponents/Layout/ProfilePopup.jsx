@@ -1,6 +1,7 @@
 /** @format */
 
 import { Fragment } from "react";
+import cookie from "js-cookie"
 import { Popover, Transition } from "@headlessui/react";
 import {
 	ChevronDownIcon,
@@ -47,10 +48,12 @@ const profileOptions = [
 	// 	icon: ArrowPathIcon
 	// }
 ];
-const callsToAction = [
-	{ name: "Watch demo", href: "#", icon: PlayCircleIcon },
-	{ name: "Contact sales", href: "#", icon: PhoneIcon }
-];
+const  logoutUser=()=>  {
+	console.log("logging out");
+	// remve cookie
+	cookie.remove('token');
+	window.location.href = "/login";
+}
 
 export default function ProfilePopup({ isOpen, setIsOpen, userDetails }) {
 	return (
@@ -59,10 +62,10 @@ export default function ProfilePopup({ isOpen, setIsOpen, userDetails }) {
 			open={isOpen}
 			onClose={() => setIsOpen(false)}
 		>
-			<Popover.Button className="flex items-center items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 focus:outline-none focus:border:none focus:ring-none flex items-center cursor-pointer text-gray-700  pl-2 pr-4 py-1  hover:bg-purple-700 hover:text-white rounded-lg duration-500 ">
-				<img src="" alt="" className="w-8 h-8 rounded-full border" />
+			<Popover.Button className="bg-[#FAF7FF] text--purple-700 flex items-center gap-2 rounded-xl  text-sm hover:bg-purple-700 hover:text-white duration-500 focus:outline-none focus:border:none focus:ring-none flex items-center cursor-pointer text-gray-700  pl-2 pr-4 py-2  hover:bg-purple-700 hover:text-white rounded-lg duration-500 border-[#eee] ">
+				<img src="/images/profilehead.png" alt="" className="object-fit w-6  h6 rounded-full border" />
 
-				<p className="hover:text-white">{userDetails && userDetails.first_name}</p>
+				<p className="hover:text-white text-xs">{userDetails && userDetails.first_name}</p>
 			</Popover.Button>
 
 			<Transition
@@ -89,11 +92,17 @@ export default function ProfilePopup({ isOpen, setIsOpen, userDetails }) {
 										/>
 									</div>
 									<div>
-										<a href={item.href} className="font-semibold text-gray-900">
-											{item.name}
-											<span className="absolute inset-0" />
-										</a>
-										
+										{item.name.toLowerCase() === "logout" ? (
+											<p onClick={logoutUser} className="font-semibold text-gray-900 cursor-pointer">
+												{item.name}
+												<span className="absolute inset-0" />
+											</p>
+										) : (
+											<a href={item.href} className="font-semibold text-gray-900 cursor-pointer">
+												{item.name}
+												<span className="absolute inset-0" />
+											</a>
+										)}
 									</div>
 								</div>
 							))}

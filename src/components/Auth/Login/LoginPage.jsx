@@ -30,7 +30,7 @@ export default function LoginPage() {
 	const [openForgotPasswordModal, setOpenForgotPasswordModal] = useState(false);
 	const [animatedWidth, setAnimatedWidth] = useState("w-full");
 	const [showLoading, setShowLoading] = useState(false);
-
+	const apiUrl = process.env.REACT_APP_API_URL;
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	// Function to navigate to registration page
@@ -81,7 +81,7 @@ export default function LoginPage() {
 
 			event.preventDefault();
 
-			const apiUrl = process.env.REACT_APP_API_URL;
+			
 
 			const allFieldsFilled = Object.values(userData).every(
 				(field) => field !== ""
@@ -125,6 +125,12 @@ export default function LoginPage() {
 				);
 			}
 		}
+	}
+
+	///google login onclick 
+	function handleGoogleLogin() {
+		window.location.href = apiUrl + "/accounts/google/login/"
+	
 	}
 
 	// ========================================================================
@@ -256,7 +262,7 @@ export default function LoginPage() {
 
 					{/* google and twitter login white background with border */}
 					<div className="flex items-center gap-5 mt-4 mx-auto">
-						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4">
+						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4" onClick = {handleGoogleLogin}>
 							<FaGoogle className="h-5 w-5 mr-2" />
 							Google
 						</button>
