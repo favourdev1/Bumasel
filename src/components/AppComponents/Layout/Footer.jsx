@@ -10,7 +10,7 @@ function Footer() {
     <div className="relative ">
       <div
         className="bg-cover  mx-auto   bg-center  relative"
-        style={{ backgroundImage: `url(${"/images/rectangle.png"})` }}
+        style={{ backgroundImage: `url(${"/images/Rectangle.png"})` }}
       >
         <div className="bg-black/30 z-10 h-full w-full top-0 pt-16 pb-5">
           {/* Overlay Text */}
