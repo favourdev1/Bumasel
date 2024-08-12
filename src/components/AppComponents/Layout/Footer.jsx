@@ -10,13 +10,13 @@ function Footer() {
     <div className="relative ">
       <div
         className="bg-cover  mx-auto   bg-center  relative"
-        style={{ backgroundImage: `url(${"/images/Rectangle.png"})` }}
+        style={{ }}
       >
-        <div className="bg-black/30 z-10 h-full w-full top-0 pt-16 pb-5">
+        <div className="bg-slate-950 z-10 h-full w-full top-0 pt-16 pb-5 text-sm">
           {/* Overlay Text */}
-          <div className=" lg:container mx-auto block md:flex justify-between  px-4 text-white ">
+          <div className=" max-w-7xl mx-auto block md:flex justify-between  px-4 text-white ">
             <div className="w-full md:w-1/2 flex flex-col gap-3">
-              <h1 className="md:text-xl  mb-4">
+              <h1 className="md:text-base  mb-4">
                 Would you like to know when we have a new product?
               </h1>
               <div className=" flex items-center w-full md:w-4/6  ">
@@ -53,13 +53,13 @@ function Footer() {
             <div className="flex flex-col w-full md:w-1/3">
               <div className="flex gap-10">
                 <ul className="list-none flex flex-col gap-y-4">
-                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
+                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors ">
                     <Link to={""}>Privacy & Policy</Link>
                   </li>
-                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
+                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors ">
                     <Link to={""}>Terms & Conditions</Link>
                   </li>
-                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
+                  <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors ">
                     <Link to={""}>Our Blog</Link>
                   </li>
                 </ul>
@@ -115,7 +115,7 @@ function Footer() {
             </div>
           </div>
 
-          <p className="text-center text-gray-200 mt-5 ">
+          <p className="text-center text-gray-400 mt-5 font-light ">
             &copy; Copyright 2024
           </p>
         </div>

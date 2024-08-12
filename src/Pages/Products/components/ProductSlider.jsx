@@ -59,14 +59,14 @@ return (
                   className="  h-[200px] object-cover"
                   src={item.img}
                 />
-                <div className="text-purple-700 absolute top-2 text-sm border border-gray-100 left-2 bg-white rounded-lg px-3 py-1.5">
+                <div className="text-purple-700 absolute top-2 text-xs border border-gray-100 left-2 bg-white rounded-lg px-3 py-1.5">
                   Newest
                 </div>
               </div>
               <div className="flex justify-between p-4 bg-white">
                 <div className="">
-                  <p className="text-gray-color font-bold text-sm">{item.title}</p>
-                  <p className="text-gray-00 text-sm mt-3">Price</p>
+                  <p className="text-gray-color font-bold text-xs">{item.title}</p>
+                  <p className="text-gray-00 text-xs mt-3">Price</p>
                   <p className="text-black   font-bold">{item.price}</p>
                 </div>
                 <div>

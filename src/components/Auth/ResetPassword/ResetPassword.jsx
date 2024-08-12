@@ -55,7 +55,7 @@ function ResetPassword({ open, setOpen }) {
                           Reset Password
                         </Dialog.Title>
                         <div className="mt-2 w-full">
-                          <p className="text-sm text-gray-500 ">
+                          <p className="text-xs text-gray-500 ">
                             Enter Your New Password Below to Reset Your Password
                           </p>
                         </div>
@@ -65,7 +65,7 @@ function ResetPassword({ open, setOpen }) {
                             <LockClosedIcon className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 focus-within:text-purple-700 text-gray-color" />
                             <input
                               type={showPassword ? "text" : "password"}
-                              className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
+                              className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-xs"
                               placeholder="Enter new password"
                               autocomplete="new-password"
                             />
@@ -86,7 +86,7 @@ function ResetPassword({ open, setOpen }) {
 
                             <input
                               type={showPassword ? "text" : "password"}
-                              className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
+                              className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-xs"
                               placeholder="Confirm password"
                               autocomplete="new-password"
                             />
@@ -108,14 +108,14 @@ function ResetPassword({ open, setOpen }) {
                   <div className=" px-4 py-3 sm:flex gap-2 flex-col sm:px-6">
                     <button
                       type="button"
-                      className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
+                      className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
                       onClick={() => setOpen(false)}
                     >
                       Reset Password
                     </button>
                     <button
                       type="button"
-                      className="mt-3  w-full border-gray-color outline-none justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                      className="mt-3  w-full border-gray-color outline-none justify-center rounded-md bg-white px-3 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                       onClick={() => setOpen(false)}
                       ref={cancelButtonRef}
                     >

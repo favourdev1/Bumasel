@@ -27,6 +27,7 @@ import LoadingState from "../../Props/LoadingState";
 
 
 import Cookies from "js-cookie";
+import { FcGoogle } from "react-icons/fc";
 
 
 
@@ -57,7 +58,7 @@ export default function Signup() {
 			let randomIndex;
 			do {
 				randomIndex = Math.floor(Math.random() * widths.length);
-			} while (randomIndex == widths.indexOf(animatedWidth));
+			} while (randomIndex === widths.indexOf(animatedWidth));
 
 			setAnimatedWidth(widths[randomIndex]);
 		}, 2000);
@@ -161,7 +162,7 @@ export default function Signup() {
 	return (
 		<div className="h-screen m-0 bg-white flex items-center  px-3 relative ">
 			{/* conditionally show loading screen */}
-			{showLoading == true && <LoadingState />}
+			{showLoading === true && <LoadingState />}
 		
 			<ToastContainer
 				position="top-right"
@@ -212,15 +213,15 @@ export default function Signup() {
 						</div>
 					</div>
 					<h2 className="text-[#201925] font-bold text-3xl">
-						Welcome To Bumasel
+					Create Account
 					</h2>
 					<p className="text-gray-color">
-						login your account we have what you like
+					To access the product you're interested in.
 					</p>
 					<form className="mt-8">
 						<div>
 							{/* first name and last name */}
-							<div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+							<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 								<div>
 									<div className="relative border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
 										{/* You can replace the src with the appropriate icon for first name */}
@@ -230,7 +231,7 @@ export default function Signup() {
 											name="first_name"
 											value={firstName}
 											onChange={(e) => setFirstName(e.target.value)}
-											className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm "
+											className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs "
 											placeholder="First Name"
 										/>
 									</div>
@@ -244,7 +245,7 @@ export default function Signup() {
 											name="last_name"
 											value={lastName}
 											onChange={(e) => setLastName(e.target.value)}
-											className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+											className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
 											placeholder="Last Name"
 										/>
 									</div>
@@ -253,28 +254,28 @@ export default function Signup() {
 
 							{/* gender */}
 
-							<div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
+							{/* <div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
 								<FaTransgender className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
 								<select
 									name="gender"
 									value={gender}
 									onChange={(e) => setGender(e.target.value)}
-									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm text-gray-color"
+									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs text-gray-color"
 								>
 									<option value="">Select Your Gender</option>
 									<option value="M">Male</option>
 									<option value="F">Female</option>
 									<option value="O">Other</option>
 								</select>
-							</div>
+							</div> */}
 							{/* age range */}
-							<div className="relative mt-6 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
+							{/* <div className="relative mt-6 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
 								<PiTornadoBold className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
 								<select
 									name="ageRange"
 									value={ageRange}
 									onChange={(e) => setAgeRange(e.target.value)}
-									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm text-gray-color"
+									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs text-gray-color"
 								>
 									<option value="">Select Age Range</option>
 									<option value="18-24">18-24</option>
@@ -282,20 +283,20 @@ export default function Signup() {
 									<option value="35-44">35-44</option>
 									<option value="45+">45+</option>
 								</select>
-							</div>
+							</div> */}
 
 							{/* address */}
-							<div className="relative mt-6 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
+							{/* <div className="relative mt-6 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
 								<GoLocation className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
 								<input
 									type="text"
 									name="address"
 									value={address}
 									onChange={(e) => setAddress(e.target.value)}
-									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
 									placeholder="Home Address"
 								/>
-							</div>
+							</div> */}
 
 							{/* email */}
 							<div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
@@ -307,31 +308,31 @@ export default function Signup() {
 									type="email"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
-									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
 									placeholder="Email Address"
 								/>
 							</div>
 
 							{/* phone number */}
-							<div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-								{/* You can replace the src with the appropriate icon for phone number */}
+							{/* <div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
+								
 								<BsTelephone className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
 								<input
 									type="tel"
 									name="phonNumber"
 									value={phoneNumber}
 									onChange={(e) => setPhoneNumber(e.target.value)}
-									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+									className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
 									placeholder="Phone Number"
 								/>
-							</div>
+							</div> */}
 
 							{/* password */}
 							<div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
 								<LockClosedIcon className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 focus-within:text-purple-700 text-gray-color" />
 								<input
 									type={showPassword ? "text" : "password"}
-									className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
+									className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-xs"
 									name="password"
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
@@ -358,7 +359,7 @@ export default function Signup() {
 									value={confirmPassword}
 									onChange={(e) => setConfirmPassword(e.target.value)}
 									type={showPassword ? "text" : "password"}
-									className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
+									className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-xs"
 									placeholder="Confirm Password"
 									autocomplete="new-password"
 								/>
@@ -399,19 +400,19 @@ export default function Signup() {
 
 					{/* google and twitter login white background with border */}
 					<div className="flex items-center gap-5 mt-4 mx-auto">
-						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4" onClick={handleGoogleLogin}>
-							<FaGoogle className="h-5 w-5 mr-2" />
+						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-xs  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4" onClick={handleGoogleLogin}>
+						<FcGoogle  className="h-5 w-5 mr-2" />
 							Google
 						</button>
 
-						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500  focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4">
+						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500  focus:outline-none flex items-center cursor-pointer  text-xs  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4">
 							<FaTwitter className="h-5 w-5 mr-2" />
 							Twitter
 						</button>
 					</div>
 
 					{/* dont have an acco */}
-					<div className="flex items-center mt-8  mx-auto text-sm">
+					<div className="flex items-center mt-8  mx-auto text-xs">
 						<p className="text-gray-color">Already have an account ?</p>
 						<p
 							className="text-purple-700 ml-1 cursor-pointer"

@@ -32,7 +32,7 @@ export default function CreateStorePage() {
           <div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
             <input
               type="text"
-              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
               placeholder="What Is Your Store Name"
               value={storeName}
               onChange={(e) => setStoreName(e.target.value)}
@@ -46,7 +46,7 @@ export default function CreateStorePage() {
           <div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
             <input
               type="text"
-              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
               placeholder="Write Description"
               value={storeDescription}
               onChange={(e) => setStoreDescription(e.target.value)}
@@ -64,7 +64,7 @@ export default function CreateStorePage() {
             />
             <input
               type="email"
-              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
               placeholder="osondusweet@gmail.com"
               value={storeEmail}
               onChange={(e) => setStoreEmail(e.target.value)}
@@ -97,7 +97,7 @@ export default function CreateStorePage() {
             <BsTelephone className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color" />
             <input
               type="tel"
-              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
               placeholder="+234702862716"
               value={storeContact}
               onChange={(e) => setStoreContact(e.target.value)}
@@ -115,7 +115,7 @@ export default function CreateStorePage() {
             />
             <input
               type="text"
-              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"
+              className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs"
               placeholder="Where are you located?"
               value={storeAddress}
               onChange={(e) => setStoreAddress(e.target.value)}

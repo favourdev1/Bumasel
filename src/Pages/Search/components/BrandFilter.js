@@ -24,19 +24,19 @@ const BrandFilter = () => {
       >
         <ul className="flex flex-col p-2 space-y-1  ">
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Brands 1
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Brands 1
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Brand 2
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Brand 2
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Brand 3
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Brand 3
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SearchIcon } from "../SearchIcon.jsx";
-import { AiTwotoneHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import { AiTwotoneStar } from "react-icons/ai";
 import Switch from "react-switch";
 import { IoHelpCircleOutline } from "react-icons/io5";
@@ -12,6 +12,10 @@ import ProfilePopup from "./ProfilePopup";
 import { useContext } from "react";
 
 import GlobalContext from "./GlobalContext";
+import { TbSmartHome } from "react-icons/tb";
+import { FiStar } from "react-icons/fi";
+
+import { useNavigate } from "react-router-dom";
 export default function Nav() {
 	const [checked, setChecked] = useState(false);
 	const { token, userProfile } = useContext(GlobalContext);
@@ -60,6 +64,14 @@ export default function Nav() {
 		navbarClasses.push("border-b");
 	}
 
+	const navigate = useNavigate();
+
+	const handleKeyDown = (e) => {
+		if (e.key === "Enter") {
+			navigate(`/search?query=${searchQuery}`);
+		}
+	};
+
 	// *******************************************
 	// *******************************************
 
@@ -70,7 +82,7 @@ export default function Nav() {
 			<nav
 				className={`${navbarClasses.join(
 					" "
-				)} py-4 px-6 fixed top-0 z-[9999999]  w-full bg-white/50 backdrop-blur-lg`}
+				)} py-4 px-6 md:px-0 fixed top-0 z-[9999999]  w-full bg-white/50 backdrop-blur-lg`}
 			>
 				<div className="max-w-7xl mx-auto px-4">
 					<div className="flex justify-between items-center w-full ">
@@ -84,8 +96,9 @@ export default function Nav() {
 								<input
 									type="text"
 									value={searchQuery}
+									onKeyDown={handleKeyDown}
 									onChange={(e) => setSearchQuery(e.target.value)}
-									className="bg-[#FAF7FF] w-full rounded-3xl text-gray-600 text-sm  px-4 py-2.5  placeholder-gray-400 border border-stone-200 focus:outline-none focus:ring-0 focus:border-purple-700 focus:border-2 "
+									className="bg-[#FAF7FF] w-full rounded-3xl text-gray-600 text-xs  px-4 py-2.5  placeholder-gray-400 border border-stone-200 focus:outline-none focus:border-0 focus:ring-purple-700 focus:ring-2 "
 									placeholder="What Are You Looking To Buy?"
 								/>
 								<div className="absolute inset-y-0 right-0 flex items-center ">
@@ -102,28 +115,28 @@ export default function Nav() {
 							<div className="ml-10 flex items-center space-x-6">
 								<button
 									color=""
-									className="bg-[#FAF7FF] text--purple-700 flex items-center gap-2 rounded-xl px-4 py-2 text-sm hover:bg-purple-700 hover:text-white duration-500"
+									className="bg-purple-600 text-white flex items-center gap-2 rounded-xl px-4 py-2 text-xs hover:bg-purple-700 hover:text-white duration-500 transition-all"
 								>
-									<AiTwotoneHeart />
-									Saved
+									<img src="/Images/shop.png" alt="Shop " />
+									Sell
 								</button>
-								{token == null || token == "undefined" ? (
+								{token !== null || token !== "undefined" ? (
 									<Link
 										color=""
 										to={"/login"}
-										className="bg-purple-700 text-white px-4 py-4 rounded-xl text-sm hover:bg-purple-500 duration-500"
+										className=" text-purple-700 px-4 py-3 rounded-xl text-xs hover:underline  duration-500 hover:text-purple-700 hover:font-bold hover:bg-purple-100"
 									>
 										Register/Login
 									</Link>
 								) : (
-									<div
-										className=""
-										onClick={() => setIsPopupOpen(true)}
-									>
+									<div className="" onClick={() => setIsPopupOpen(true)}>
 										{/* dummy profile  */}
-									
-								
-                    <ProfilePopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} userDetails={userProfile}/>
+
+										<ProfilePopup
+											isOpen={isPopupOpen}
+											setIsOpen={setIsPopupOpen}
+											userDetails={userProfile}
+										/>
 									</div>
 								)}
 							</div>
@@ -131,41 +144,43 @@ export default function Nav() {
 					</div>
 				</div>
 			</nav>
-			<nav className=" py-2  mt-20 hidden lg:block items-center text-sm justify-start">
+			<nav className=" py-2  mt-20 hidden lg:block items-center text-xs justify-start">
 				<div className="max-w-7xl mx-auto px-4 ">
 					<div className="flex gap-5 items-center w-full ">
 						<Link
-							className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold"
+							className="rounded-xl hover:bg-purple-100 pr-3 py-2  flex items-center gap-4 duration-500 hover:px-3 hover:text-purple-700 hover:font-bold"
 							to={"/"}
 						>
+							<TbSmartHome className="size-5" />
 							Home
 						</Link>
 						<Link
-							className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold"
+							className="rounded-xl hover:bg-purple-100 px-3 py-2  flex items-center gap-4 duration-500 hover:text-purple-700 hover:font-bold"
 							to={""}
 						>
+							<AiOutlineHeart className="size-5" />
 							Sell
 						</Link>
-						<Link
-							className="rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold"
-							to={""}
-						>
-							Hottest Deals
-						</Link>
+
 						<button
 							color=""
 							className=" flex gap-2  items-center rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold focus:border-0 focus:outline-none focus:ring-0"
 						>
-							<AiTwotoneStar />
+							<FiStar className="size-5" />
 							Ratings
 						</button>
 						<button
 							color=""
 							className="flex gap-2 px-4 py-2 items-center rounded-xl hover:bg-purple-100 px-3 py-2 duration-500 hover:text-purple-700 hover:font-bold focus:border-0 focus:outline-none focus:ring-0"
 						>
-							<IoHelpCircleOutline className="w-5 h-5" />
+							<img
+								src="/images/message-question.png"
+								alt=""
+								className="w-5 h-5"
+							/>
 							Need Help
 						</button>
+
 						<div className="flex items-center gap-3 mx-4">
 							<span
 								className={
@@ -200,7 +215,7 @@ export default function Nav() {
 				</div>
 			</nav>
 			<nav className="  justify-start  hidden lg:flex bg-purple-700 w-full">
-				<div className="max-w-7xl mx-auto px-4 w-full text-sm">
+				<div className="max-w-7xl mx-auto  w-full text-xs">
 					<div className="flex gap-x-7 items-center w-full text-white ">
 						<Link
 							to={""}

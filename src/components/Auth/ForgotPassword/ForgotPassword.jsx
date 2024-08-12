@@ -50,7 +50,7 @@ function ForgotPassword({ open, setOpen }) {
 													Forgot Password
 												</Dialog.Title>
 												<div className="mt-2 w-full">
-													<p className="text-sm text-gray-500 ">
+													<p className="text-xs text-gray-500 ">
 														Enter Your New Password Below to Reset Your Password
 													</p>
 												</div>
@@ -59,7 +59,7 @@ function ForgotPassword({ open, setOpen }) {
 													<div className="relative mt-4 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
 														<input
 															type={inputType === "email" ? "email" : "tel"}
-															className="w-full px-4 py-2  pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
+															className="w-full px-4 py-2  pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-xs"
 															placeholder={
 																inputType === "email" ? "Email" : "Phone Number"
 															}
@@ -86,14 +86,14 @@ function ForgotPassword({ open, setOpen }) {
 									<div className=" px-4 py-3 sm:flex gap-2 flex-col sm:px-6">
 										<button
 											type="button"
-											className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
+											className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
 											onClick={() => setOpen(false)}
 										>
 											Confirm
 										</button>
 										<button
 											type="button"
-											className="mt-3  w-full border-gray-color outline-none justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+											className="mt-3  w-full border-gray-color outline-none justify-center rounded-md bg-white px-3 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
 											onClick={() => setOpen(false)}
 											ref={cancelButtonRef}
 										>

@@ -8,7 +8,7 @@ import "./index.css";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "./App.css";
-import HomePage from "./HomePage";
+import HomePage from "./components/Home/HomePage";
 import LoginPage from "./components/Auth/Login/LoginPage";
 import Signup from "./components/Auth/Signup/Signup";
 import Mainlayout from "./components/AppComponents/Layout/Mainlayout";
@@ -17,6 +17,7 @@ import ProductPage from "./Pages/Products/ProductPage";
 import SearchPage from "./Pages/Search/SearchPage";
 import ProfilePage from "./Pages/Store/ProfilePage"
 import CreateStorePage from "./Pages/Store/CreateStorePage";
+// eslint-disable-next-line
 
 ReactDOM.render(
   <React.StrictMode>

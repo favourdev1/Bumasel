@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 const Dropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -24,43 +24,43 @@ const Dropdown = () => {
       >
         <ul className="flex flex-col p-2 space-y-1  ">
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Laundry
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Laundry
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Dishwashers
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Dishwashers
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Fridges & Freezers
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Fridges & Freezers
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Cooking
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Cooking
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Small Appliances
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Small Appliances
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Garden & DIY
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Garden & DIY
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>
           </li>
           <li>
-            <p className="w-full text-sm text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Health & Beauty
+            <p className="w-full text-xs text-left pl-2 flex items-center justify-between py-2 hover:text-purple-700 hover:font-semibold cursor-pointer">Health & Beauty
             <IoIosArrowForward className="w-3 h-3 text-gray-400"/>
             
             </p>

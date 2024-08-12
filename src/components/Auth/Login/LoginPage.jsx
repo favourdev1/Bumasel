@@ -16,11 +16,12 @@ import "react-toastify/dist/ReactToastify.css";
 import widths from "../animatedWidth";
 import ResetPassword from "../ResetPassword/ResetPassword";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
-import VerifyOtp from "../VerifyOtp/VerifyOtp";
+// import VerifyOtp from "../VerifyOtp/VerifyOtp";
 import LoadingState from "../../Props/LoadingState";
 import "./LoginPage.css";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginPage() {
 	// State declarations
@@ -209,7 +210,7 @@ export default function LoginPage() {
 								type="text"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
-								className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm" // Add border-transparent and active:border-transparent
+								className="w-full px-4 ml-3 py-2 pl-8 border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-xs" // Add border-transparent and active:border-transparent
 								placeholder="Email Address"
 							/>
 						</div>
@@ -221,7 +222,7 @@ export default function LoginPage() {
 								type={showPassword ? "text" : "password"}
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
-								className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
+								className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-xs"
 								placeholder="Password"
 								autocomplete="new-password"
 							/>
@@ -238,7 +239,7 @@ export default function LoginPage() {
 						</div>
 						<div className="flex items-center">
 							<p
-								className="text-purple-700  mt-5 text-sm  ml-auto cursor-pointer"
+								className="text-purple-700  mt-5 text-xs  ml-auto cursor-pointer"
 								onClick={() => setOpenForgotPasswordModal(true)}
 							>
 								Forgot Password ?
@@ -262,19 +263,19 @@ export default function LoginPage() {
 
 					{/* google and twitter login white background with border */}
 					<div className="flex items-center gap-5 mt-4 mx-auto">
-						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4" onClick = {handleGoogleLogin}>
-							<FaGoogle className="h-5 w-5 mr-2" />
+						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-xs  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4" onClick = {handleGoogleLogin}>
+						<FcGoogle  className="h-5 w-5 mr-2" />
 							Google
 						</button>
 
-						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500  focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4">
+						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500  focus:outline-none flex items-center cursor-pointer  text-xs  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4">
 							<FaTwitter className="h-5 w-5 mr-2" />
 							Twitter
 						</button>
 					</div>
 
 					{/* dont have an acco */}
-					<div className="flex items-center mt-8  mx-auto text-sm">
+					<div className="flex items-center mt-8  mx-auto text-xs">
 						<p className="text-gray-color">Don't have an account ?</p>
 						<p
 							className="text-purple-700 ml-1 cursor-pointer"

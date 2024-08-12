@@ -55,3 +55,13 @@ body .Toastify__toast-container .Toastify__toast .Toastify__toast-body {
 .accordion-content.open {
   max-height: 1000px; /* You might need to adjust this value */
 }
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em; /* Adjust this value based on your font size */
+  max-height: 3em; /* 2 lines * line-height */
+}

@@ -3,17 +3,12 @@
 import { Fragment } from "react";
 import cookie from "js-cookie"
 import { Popover, Transition } from "@headlessui/react";
-import {
-	ChevronDownIcon,
-	PhoneIcon,
-	PlayCircleIcon
-} from "@heroicons/react/20/solid";
+
 import {
 	ArrowPathIcon,
 	ChartPieIcon,
 	CursorArrowRaysIcon,
-	FingerPrintIcon,
-	SquaresPlusIcon
+
 } from "@heroicons/react/24/outline";
 
 const profileOptions = [
@@ -62,7 +57,7 @@ export default function ProfilePopup({ isOpen, setIsOpen, userDetails }) {
 			open={isOpen}
 			onClose={() => setIsOpen(false)}
 		>
-			<Popover.Button className="bg-[#FAF7FF] text--purple-700 flex items-center gap-2 rounded-xl  text-sm hover:bg-purple-700 hover:text-white duration-500 focus:outline-none focus:border:none focus:ring-none flex items-center cursor-pointer text-gray-700  pl-2 pr-4 py-2  hover:bg-purple-700 hover:text-white rounded-lg duration-500 border-[#eee] ">
+			<Popover.Button className="bg-[#FAF7FF] text--purple-700 flex items-center gap-2 rounded-xl  text-xs hover:bg-purple-700 hover:text-white duration-500 focus:outline-none focus:border:none focus:ring-none flex items-center cursor-pointer text-gray-700  pl-2 pr-4 py-2  hover:bg-purple-700 hover:text-white rounded-lg duration-500 border-[#eee] ">
 				<img src="/images/profilehead.png" alt="" className="object-fit w-6  h6 rounded-full border" />
 
 				<p className="hover:text-white text-xs">{userDetails && userDetails.first_name}</p>
@@ -78,7 +73,7 @@ export default function ProfilePopup({ isOpen, setIsOpen, userDetails }) {
 				leaveTo="opacity-0 translate-y-1"
 			>
 				<Popover.Panel className="absolute left-1/2 z-10 mt-2 flex w-screen max-w-max -translate-x-1/2 px-4">
-					<div className=" flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/10">
+					<div className=" flex-auto overflow-hidden rounded-3xl bg-white text-xs leading-6 shadow-lg ring-1 ring-gray-900/10">
 						<div className="p-4">
 							{profileOptions.map((item) => (
 								<div

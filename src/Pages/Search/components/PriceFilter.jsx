@@ -22,7 +22,7 @@ function PriceFilter() {
 				min="0"
 				max="100"
 			/>
-			<span id="priceRange-value" class="text-sm"></span>
+			<span id="priceRange-value" class="text-xs"></span>
 		</div>
 	);
 }

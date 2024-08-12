@@ -46,7 +46,7 @@ function SuccessfulAccountCreation({ open, setOpen }) {
                                                     Account Created Successfully
                                                 </Dialog.Title>
                                                 <div className="mt-2 w-full">
-                                                    <p className="text-sm text-gray-500 ">
+                                                    <p className="text-xs text-gray-500 ">
                                                         Your account has been successfully created.
                                                     </p>
                                                 </div>
@@ -56,7 +56,7 @@ function SuccessfulAccountCreation({ open, setOpen }) {
                                     <div className=" px-4 py-3 sm:flex gap-2 flex-col sm:px-6">
                                         <button
                                             type="button"
-                                            className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
+                                            className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
                                             onClick={() => setOpen(false)}
                                         >
                                             Continue

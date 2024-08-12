@@ -62,7 +62,7 @@ function VerifyOtp({ open, setOpen }) {
                                                     Verify OTP
                                                 </Dialog.Title>
                                                 <div className="mt-2 w-full">
-                                                    <p className="text-sm text-gray-500 ">
+                                                    <p className="text-xs text-gray-500 ">
                                                         Enter the 6-digit OTP sent to your email or phone number
                                                     </p>
                                                 </div>
@@ -86,14 +86,14 @@ function VerifyOtp({ open, setOpen }) {
                                     <div className=" px-4 py-3 sm:flex gap-2 flex-col sm:px-6">
                                         <button
                                             type="button"
-                                            className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
+                                            className=" w-full justify-center rounded-md bg-purple-700 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-purple-600 sm:w-auto"
                                             onClick={() => setOpen(false)}
                                         >
                                             Verify
                                         </button>
                                         <button
                                             type="button"
-                                            className="mt-3  w-full border-gray-color outline-none justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                                            className="mt-3  w-full border-gray-color outline-none justify-center rounded-md bg-white px-3 py-2 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                                             onClick={() => setOpen(false)}
                                             ref={cancelButtonRef}
                                         >
