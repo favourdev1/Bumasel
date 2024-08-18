@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useContext } from "react";
-
+import { useNavigate } from 'react-router-dom';
 import Switch from "react-switch";
 import { Link } from "react-router-dom";
 import {
@@ -27,6 +27,9 @@ function ProfileSection({ userProfile }) {
 	const [emailChecked, setEmailChecked] = useState(false);
 	const [newsletterChecked, setNewsletterChecked] = useState(false);
 	const [formData, setFormData] = useState(userProfile);
+	
+		const [stateInput, setStateInput] = useState("");
+		const [cityInput, setCityInput] = useState("");
 	const [editSectionOpen, setEditSectionOpen] = useState(false); // State to track if edit section is open on mobile
 
 	// Handler for email notification switch
@@ -39,9 +42,6 @@ function ProfileSection({ userProfile }) {
 		setNewsletterChecked(checked);
 	};
 
-	const [stateInput, setStateInput] = useState("");
-	const [cityInput, setCityInput] = useState("");
-
 	const handleInputChange = (e) => {
 		const { id, value } = e.target;
 		if (id === "stateInput") {
@@ -50,6 +50,12 @@ function ProfileSection({ userProfile }) {
 			setCityInput(value);
 		}
 	};
+
+	const navigate = useNavigate();
+
+    const navigateToSellPage = () => {
+        navigate('/store/create'); // Replace with your actual route
+    };
 
 	const profileOptions = [
 		{
@@ -148,11 +154,11 @@ function ProfileSection({ userProfile }) {
 										className="rounded-full size-4 mx-2 text-purple-500 "
 									/>
 								</div>
-								<div className="flex flex-col">
-									<p className="text-sm font-bold pb-0 mb-0 text-purple-700">
-										Sell On Bumersell
-									</p>
-								</div>
+								<div className="flex flex-col" onClick={navigateToSellPage}>
+            <p className="text-sm font-bold pb-0 mb-0 text-purple-700">
+                Sell On Bumersell
+            </p>
+        </div>
 							</div>
 						</div>
 					</div>

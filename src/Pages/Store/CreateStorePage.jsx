@@ -21,8 +21,8 @@ export default function CreateStorePage() {
     };
 
   return (
-    <div className="fixed   overflow-y-auto top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-50 bautoplaySpeedackdrop-filter backdrop-blur z-50">
-      <div className=" bg-white p-8 rounded-lg flex flex-col gap-3 w-[95%] md:w-[70%] mt-8 lg:w-[60%] xl:w-[30%]">
+    <div className="   overflow-y-auto  w-full h-full flex justify-center items-center bg-white rounded-xl ">
+      <div className=" bg-white p-8 rounded-lg flex flex-col gap-3  mt-8 ">
         <h2 className="text-2xl font-bold mb-0 w-full text-center">Create Store On Bumasell</h2>
       <p className="text-gray-400 w-full text-center mb-2">Pleae Fill In Your Store Information Below To Create Your Store</p>
         <div className="mb-4">

@@ -151,7 +151,7 @@ export default function Nav() {
 							className="rounded-xl hover:bg-purple-100 pr-3 py-2  flex items-center gap-4 duration-500 hover:px-3 hover:text-purple-700 hover:font-bold"
 							to={"/"}
 						>
-							<TbSmartHome className="size-5" />
+							<img src="/images/homeIcon.png" className="size-4" />
 							Home
 						</Link>
 						<Link

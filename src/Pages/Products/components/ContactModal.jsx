@@ -74,18 +74,20 @@ const ContactModal = ({ isOpen, onClose, children }) => {
 				<div className="rounded-xl border border-purple-300 p-5  mt-4 bg-purple-100">
 					<p className="font-bold text-base">Note</p>
 					<ul className="prose text-sm text-gray-500 list-disc I px-5">
+						<li>Make Sure You Meet In A Public Place</li>
+						<li>Avoid paying in advance, even for delivery</li>
 						<li>
 							Goods Especially Edible Products Are Advised To Be 1 - 3km Away
 							From Present Location
 						</li>
-						<li>Make Sure You Pay On Delivery</li>
 						<li>Contact And Report Vendor If You Find It Suspicious</li>
+						
 					</ul>
 				</div>
 
 				{children}
 				<button
-					className="mt-4 px-4 py-2 bg-green-100 ring-1  ring-green-500 hover:bg-green-700  hover:text-white duration-500 w-full text-center  text-green-700 rounded-2xl"
+					className="mt-4 px-4 py-2 bg-purple-100 ring-1  ring-purple-500 hover:bg-purple-700  hover:text-white duration-500 w-full text-center  text-purple-700 rounded-2xl"
 					onClick={() => window.location.href = 'tel:+1234567890'}
 				>
 					Call John Doe

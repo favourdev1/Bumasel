@@ -31,6 +31,7 @@ const ProductCard = ({ index, item }) => {
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 lineHeight: '1.25rem', // Adjust this value based on your font size
+                minHeight:'3em', // 2 lines * line-height
                 maxHeight: '3em', // 2 lines * line-height
               }}
             >
