@@ -54,7 +54,7 @@ function ProfileSection({ userProfile }) {
 	const navigate = useNavigate();
 
     const navigateToSellPage = () => {
-        navigate('/store/create'); // Replace with your actual route
+        navigate('/vendor/onboarding'); // Replace with your actual route
     };
 
 	const profileOptions = [

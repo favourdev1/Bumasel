@@ -16,7 +16,7 @@ import Sellerspage from "./Pages/Vendors/store/Sellerspage";
 import ProductPage from "./Pages/Products/ProductPage";
 import SearchPage from "./Pages/Search/SearchPage";
 import ProfilePage from "./Pages/Store/ProfilePage";
-import CreateStorePage from "./Pages/Store/CreateStorePage";
+import CreateStorePage from "./Pages/Vendors/Onboarding/components/StoreInfo";
 import Dashboard from "./components/AppComponents/Layout/DashboardLayout/Dashboard";
 import VendorDashboard from "./Pages/Vendors/Dashboard";
 import Store from "./Pages/Vendors/store/Store";

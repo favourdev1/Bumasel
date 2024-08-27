@@ -169,10 +169,10 @@ export const ProfileComponent = ({userProfile}) => {
 								Email
 							</label>
 							<div className="relative mt-3 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none py-1">
-								<AiTwotoneMail
-									className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-color"
-									alt="email"
-								/>
+							<img src="/images/sms.png"
+							className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-400"
+							alt="email"
+						/>
 								<input
 									type="email"
 									value={userProfile.email}

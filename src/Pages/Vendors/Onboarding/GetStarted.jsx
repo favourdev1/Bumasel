@@ -1,9 +1,12 @@
 /** @format */
 
 import React, { useState } from "react";
-
+import SellType from "./components/SellType";
+import StoreInfo from "./components/StoreInfo";
+import LocationInfo from "./components/LocationInfo";
+import { IoArrowBack } from "react-icons/io5";
 const GetStarted = () => {
-	const [selectedOption, setSelectedOption] = useState(null);
+	const [selectedOption, setSelectedOption] = useState('goods');
 
 	const handleClick = (option) => {
 		setSelectedOption(option);
@@ -16,11 +19,11 @@ const GetStarted = () => {
 	};
 	return (
 		<div className="bg-gray-50 flex items-center justify-center w-screen h-screen">
-			<div className="max-w-2xl w-full  bg-white shadow-sm rounded-xl border border-[#eee] min-h-[80vh] p-10 flex flex-col">
+			<div className="max-w-2xl w-full transition-all duration-500 bg-white shadow-sm rounded-xl border border-[#eee] overflow-hidden p-10 flex flex-col  min-h-[70vh] max-h-[90vh]">
 				<div className="flex-1">
 					{/* progress section  */}
 					<div className=" transition-all w-full flex flex-col gap-y-4">
-						<div className="text-sm text-gray-400">Step 1 of 4</div>
+						<div className="text-sm text-gray-400">Step {progress} of 3</div>
 						{/* Progress indicators */}
 						<div className="flex items-center gap-2">
 							<div
@@ -44,79 +47,38 @@ const GetStarted = () => {
 						</div>
 					</div>
 
-					{/* content */}
-					<div className=" mt-10 mb-5">
-						<h1 className="font-bold text-xl">What do you sell?</h1>
-						<p className="text-gray-400 text-sm">
-							Start by selecting the type of product you sell
-						</p>
-					</div>
-					<div className="w-3/4 flex flex-col gap-y-4">
-						{/* options */}
-						<div
-							className={`rounded-xl border hover:animate-pulse ${
-								selectedOption === "goods"
-									? "border-purple-500 bg-purple-50"
-									: "border-[#eee]"
-							} flex items-center p-4 gap-4 hover:bg-purple-50 duration-500 cursor-pointer`}
-							onClick={() => handleClick("goods")}
-						>
-							<div
-								className={`rounded-lg duration-500 border ${
-									selectedOption === "goods" ? "bg-purple-700" : "bg-purple-100"
-								} "rounded-md  h-5 w-5`}
-							></div>
-							<div className="flex-1">
-								<h1 className="font-semibold">Goods </h1>
-								<p className="text-gray-400 text-sm">
-									Physical Product I Shopped Myself
-								</p>
-							</div>
-							<img src="/images/bag-2.png" alt="" />
-						</div>
-
-						{/* options */}
-						<div
-							className={`rounded-xl border ${
-								selectedOption === "services"
-									? "border-purple-500 bg-purple-50"
-									: "border-[#eee]"
-							} flex items-center p-4 gap-4 hover:animate-pulse hover:bg-purple-50 duration-500 cursor-pointer`}
-							onClick={() => handleClick("services")}
-						>
-							<div
-								className={`rounded-lg duration-500 border ${
-									selectedOption === "services"
-										? "bg-purple-700"
-										: "bg-purple-100"
-								} "rounded-md  h-5 w-5`}
-							></div>
-							<div className="flex-1">
-								<h1 className="font-semibold">Services </h1>
-								<p className="text-gray-400 text-sm">
-									Cleaning, Make Up, Barbing, Repair etc
-								</p>
-							</div>
-							<img src="/images/weight.png" alt="" />
-						</div>
+					<div className=" min-h-[70vh] overflow-y-scroll">
+						{/* pages */}
+						{progress === 1 ? (
+							<SellType
+								handleClick={handleClick}
+								selectedOption={selectedOption}
+							/>
+						) : progress === 2 ? (
+							<StoreInfo />
+						) : progress === 3 ? (
+							<LocationInfo />
+						) : null}
 					</div>
 				</div>
-
 				{/* Next and Previous buttons */}
-				<div className="flex items-center justify-end mt-4 gap-4 text-sm">
+				<div className="flex items-center justify-between mt-4 gap-4 text-sm transition-all ">
+					<div className="flex items-center gap-2 text-sm transition-all text-gray-700  py-2  hover:text-gray-700 hover:border-b-2 border-spacing-2 hover:border-gray-300 pb-0 ">
+						<IoArrowBack className="size-5 " />
+						<button
+							className=" "
+							onClick={() => handleProgressClick(progress - 1)}
+							disabled={progress <= 1}
+						>
+							Prev
+						</button>
+					</div>
 					<button
-						className=" text-gray-700 px-4 py-2 rounded-md hover:bg-gray-100 hover:border-gray-100 duration-300"
-						onClick={() => handleProgressClick(progress - 1)}
-						disabled={progress <= 0}
-					>
-						Prev
-					</button>
-					<button
-						className="bg-purple-700 animate-pulse text-white px-8 py-2 rounded-md hover:bg-purple-600 duration-300"
+						className="bg-purple-700 transition-all   text-white px-8 py-2 rounded-md hover:bg-purple-600 duration-500"
 						onClick={() => handleProgressClick(progress + 1)}
 						disabled={progress >= 3}
 					>
-						Next
+						{progress === 3 ? "Create Account" : "Next"}
 					</button>
 				</div>
 			</div>
