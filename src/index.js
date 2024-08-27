@@ -12,13 +12,16 @@ import HomePage from "./components/Home/HomePage";
 import LoginPage from "./components/Auth/Login/LoginPage";
 import Signup from "./components/Auth/Signup/Signup";
 import Mainlayout from "./components/AppComponents/Layout/Mainlayout";
-import Sellerspage from "./Pages/Vendors/Sellerspage";
+import Sellerspage from "./Pages/Vendors/store/Sellerspage";
 import ProductPage from "./Pages/Products/ProductPage";
 import SearchPage from "./Pages/Search/SearchPage";
 import ProfilePage from "./Pages/Store/ProfilePage";
 import CreateStorePage from "./Pages/Store/CreateStorePage";
 import Dashboard from "./components/AppComponents/Layout/DashboardLayout/Dashboard";
 import VendorDashboard from "./Pages/Vendors/Dashboard";
+import Store from "./Pages/Vendors/store/Store";
+import SubscriptionTable from "./Pages/Vendors/Subscription/SubscriptionTable";
+import GetStarted from "./Pages/Vendors/Onboarding/GetStarted";
 // eslint-disable-next-line
 
 ReactDOM.render(
@@ -37,9 +40,13 @@ ReactDOM.render(
 				</Route>
 				<Route path="/dashboard" element={<Dashboard />}>
 					<Route path="vendor" element={<VendorDashboard />} />
+					<Route path="store" element={<Store />} />
 					<Route path="store/create" element={<CreateStorePage />} />
-					<Route path="sellers" element={<Sellerspage />} />
+					<Route path="store/sellers" element={<Sellerspage />} />
+					<Route path="subscription" element={<SubscriptionTable />} />
 				</Route>
+
+				<Route path="/vendor/Onboarding" element={<GetStarted/>} />
 
 				<Route path="*" element={<div>404 Not Found</div>} />
 			</Routes>
