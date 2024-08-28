@@ -30,7 +30,7 @@ const ContactModal = ({ isOpen, onClose, children }) => {
 			onClick={handleOverlayClick}
 		>
 			<div
-				className={`bg-white p-6 w-4/12  rounded-lg shadow-lg transition-transform duration-300 ${
+				className={`bg-white p-6 w-11/12 lg:w-4/12  rounded-lg shadow-lg transition-transform duration-300 ${
 					isOpen ? "open" : ""
 				} modal-content`}
 			>

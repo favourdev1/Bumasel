@@ -16,6 +16,8 @@ import { TbSmartHome } from "react-icons/tb";
 import { FiStar } from "react-icons/fi";
 
 import { useNavigate } from "react-router-dom";
+import { RiMenuFill } from "react-icons/ri";
+import { IoMdClose } from "react-icons/io";
 export default function Nav() {
 	const [checked, setChecked] = useState(false);
 	const { token, userProfile } = useContext(GlobalContext);
@@ -76,62 +78,68 @@ export default function Nav() {
 	// *******************************************
 
 	const { searchQuery, setSearchQuery } = useContext(GlobalContext);
-
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	return (
 		<div className="relative ">
 			<nav
 				className={`${navbarClasses.join(
 					" "
-				)} py-4 px-6 md:px-0 fixed top-0 z-[9999999]  w-full bg-white/50 backdrop-blur-lg`}
+				)} py-4 px-6 md:px-0 fixed top-0 z-[9999999] w-full bg-white/50 backdrop-blur-lg`}
 			>
 				<div className="max-w-7xl mx-auto px-4">
-					<div className="flex justify-between items-center w-full ">
-						<div className="flex-shrink-0 ">
-							<Link to={"/"} className=" text-lg font-bold">
-								<img src="/images/logo.png" className="w-24 " alt=" App Logo" />
+					<div className="flex justify-between items-center w-full">
+						<div className="flex-shrink-0">
+							<Link to="/" className="text-lg font-bold">
+								<img src="/images/logo.png" className="w-24" alt="App Logo" />
 							</Link>
 						</div>
-						<div className="ml-4 flex-1 flex items-center md:ml-6 ">
+						<div className="ml-4 flex-1  items-center md:ml-6 hidden md:flex">
 							<div className="relative w-full">
 								<input
 									type="text"
 									value={searchQuery}
 									onKeyDown={handleKeyDown}
 									onChange={(e) => setSearchQuery(e.target.value)}
-									className="bg-[#FAF7FF] w-full rounded-3xl text-gray-600 text-xs  px-4 py-2.5  placeholder-gray-400 border border-stone-200 focus:outline-none focus:border-0 focus:ring-purple-700 focus:ring-2 "
+									className="bg-[#FAF7FF] w-full rounded-3xl text-gray-600 text-xs px-4 py-2.5 placeholder-gray-400 border border-stone-200 focus:outline-none focus:border-0 focus:ring-purple-700 focus:ring-2"
 									placeholder="What Are You Looking To Buy?"
 								/>
-								<div className="absolute inset-y-0 right-0 flex items-center ">
+								<div className="absolute inset-y-0 right-0 flex items-center">
 									<button
 										type="submit"
-										className="text-gray-300  focus:outline-none px-4 py-2 rounded-3xl"
+										className="text-gray-300 focus:outline-none px-4 py-2 rounded-3xl"
 									>
 										<SearchIcon width={20} height={20} />
 									</button>
 								</div>
 							</div>
 						</div>
+						<div className="md:hidden">
+							<button
+								onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+								className="text-gray-600 focus:outline-none"
+							>
+								{isMobileMenuOpen ? (
+									<IoMdClose width={24} height={24} />
+								) : (
+									<RiMenuFill width={24} height={24} />
+								)}
+							</button>
+						</div>
 						<div className="hidden md:block">
 							<div className="ml-10 flex items-center space-x-6">
-								<button
-									color=""
-									className="bg-purple-600 text-white flex items-center gap-2 rounded-xl px-4 py-2 text-xs hover:bg-purple-700 hover:text-white duration-500 transition-all"
-								>
-									<img src="/Images/shop.png" alt="Shop " />
+								<button className="bg-purple-600 text-white flex items-center gap-2 rounded-xl px-4 py-2 text-xs hover:bg-purple-700 hover:text-white duration-500 transition-all">
+									<img src="/Images/shop.png" alt="Shop" />
 									Sell
 								</button>
-								{token !== null || token !== "undefined" ? (
+								{token !== null && token !== "undefined" ? (
 									<Link
-										color=""
-										to={"/login"}
-										className=" text-purple-700 px-4 py-3 rounded-xl text-xs hover:underline  duration-500 hover:text-purple-700 hover:font-bold hover:bg-purple-100"
+										to="/login"
+										className="text-purple-700 px-4 py-3 rounded-xl text-xs hover:underline duration-500 hover:text-purple-700 hover:font-bold hover:bg-purple-100"
 									>
 										Register/Login
 									</Link>
 								) : (
-									<div className="" onClick={() => setIsPopupOpen(true)}>
-										{/* dummy profile  */}
-
+									<div onClick={() => setIsPopupOpen(true)}>
 										<ProfilePopup
 											isOpen={isPopupOpen}
 											setIsOpen={setIsPopupOpen}
@@ -143,7 +151,57 @@ export default function Nav() {
 						</div>
 					</div>
 				</div>
+
+				
+				{isMobileMenuOpen && (
+					<div className="md:hidden bg-white/50 backdrop-blur-lg w-full py-4 px-6">
+						<div className="flex flex-col space-y-4">
+							<button className="bg-purple-600 text-white flex items-center gap-2 rounded-xl px-4 py-2 text-xs hover:bg-purple-700 hover:text-white duration-500 transition-all">
+								<img src="/Images/shop.png" alt="Shop" />
+								Sell
+							</button>
+							{token !== null && token !== "undefined" ? (
+								<Link
+									to="/login"
+									className="text-purple-700 px-4 py-3 rounded-xl text-xs hover:underline duration-500 hover:text-purple-700 hover:font-bold hover:bg-purple-100"
+								>
+									Register/Login
+								</Link>
+							) : (
+								<div onClick={() => setIsPopupOpen(true)}>
+									<ProfilePopup
+										isOpen={isPopupOpen}
+										setIsOpen={setIsPopupOpen}
+										userDetails={userProfile}
+									/>
+								</div>
+							)}
+						</div>
+					</div>
+				)}
 			</nav>
+
+			
+			<div className="relative w-full block md:hidden mt-20 px-5">
+								<input
+									type="text"
+									value={searchQuery}
+									onKeyDown={handleKeyDown}
+									onChange={(e) => setSearchQuery(e.target.value)}
+									className="bg-[#FAF7FF] w-full rounded-3xl text-gray-600 text-xs px-4 py-2.5 placeholder-gray-400 border border-stone-200 focus:outline-none focus:border-0 focus:ring-purple-700 focus:ring-2"
+									placeholder="What Are You Looking To Buy?"
+								/>
+								<div className="absolute inset-y-0 right-4 flex items-center">
+									<button
+										type="submit"
+										className="text-gray-300 focus:outline-none px-4 py-2 rounded-3xl"
+									>
+										<SearchIcon width={20} height={20} />
+									</button>
+								</div>
+							</div>
+
+
 			<nav className=" py-2  mt-20 hidden lg:block items-center text-xs justify-start">
 				<div className="max-w-7xl mx-auto px-4 ">
 					<div className="flex gap-5 items-center w-full ">
@@ -159,7 +217,7 @@ export default function Nav() {
 							to={""}
 						>
 							<AiOutlineHeart className="size-5" />
-							Sell
+							Saved
 						</Link>
 
 						<button

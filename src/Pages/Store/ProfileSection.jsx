@@ -222,7 +222,7 @@ function ProfileSection({ userProfile }) {
 						<Link
 							color=""
 							to={""}
-							className="bg-white flex text-black text-center gap-2  py-2  text-xs hover:bg-purple-100 hover:text-gray-400 duration-500"
+							className="bg-white flex text-black text-center gap-2 px-2.5 rounded-lg py-2  text-xs hover:bg-purple-100 hover:text-gray-400 duration-500"
 						>
 							<FaQuestionCircle className="mt-1" />
 							FAQ
@@ -230,7 +230,7 @@ function ProfileSection({ userProfile }) {
 						<Link
 							color=""
 							to={""}
-							className="bg-white text-black text-center gap-2 flex  py-2  text-xs hover:bg-purple-100 hover:text-gray-400 duration-500"
+							className="bg-white text-black text-center gap-2 flex  py-2 px-2.5 rounded-lg text-xs hover:bg-purple-100 hover:text-gray-400 duration-500"
 						>
 							<FaInfoCircle className="mt-1" />
 							Need Help
@@ -238,7 +238,7 @@ function ProfileSection({ userProfile }) {
 						<Link
 							color=""
 							to={""}
-							className="bg-white text-black text-center gap-2 flex  py-2 text-xs hover:bg-purple-100 hover:text-gray-400 duration-500"
+							className="bg-white text-black text-center gap-2 flex px-2.5 rounded-lg py-2 text-xs hover:bg-purple-100 hover:text-gray-400 duration-500"
 						>
 							<AiOutlineBug className="mt-1" />
 							Report Issues
