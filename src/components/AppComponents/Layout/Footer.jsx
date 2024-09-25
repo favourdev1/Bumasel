@@ -19,7 +19,7 @@ function Footer() {
               <h1 className="md:text-base  mb-4">
                 Would you like to know when we have a new product?
               </h1>
-              <div className=" flex items-center w-full md:w-4/6  ">
+              <div className=" flex items-center w-full w-full lg:w-4/6  ">
                 <div className="relative w-full">
                   <input
                     type="text"
@@ -50,14 +50,14 @@ function Footer() {
                 <p>Email: Evihslimited6@gmail.com</p>
               </div>
             </div>
-            <div className="flex flex-col w-full md:w-1/3">
+            <div className="flex flex-col w-full items-end lg:w-1/3">
               <div className="flex gap-10">
                 <ul className="list-none flex flex-col gap-y-4">
                   <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors ">
-                    <Link to={""}>Privacy & Policy</Link>
+                    <Link to={"/privacyPolicy"}>Privacy & Policy</Link>
                   </li>
                   <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors ">
-                    <Link to={""}>Terms & Conditions</Link>
+                    <Link to={"/terms"}>Terms & Conditions</Link>
                   </li>
                   <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors ">
                     <Link to={""}>Our Blog</Link>
@@ -74,7 +74,7 @@ function Footer() {
                         <Link to={""}>Sell On Bumasel</Link>
                       </li>
                       <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
-                        <Link to={""}>About us</Link>
+                        <Link to={"/aboutus"}>About us</Link>
                       </li>
                       <li className="text-gray-200 hover:text-gray-300 hover:underline hover:decoration-2 duration-500 transition-colors duration-300">
                         <Link to={""}>Contact us</Link>

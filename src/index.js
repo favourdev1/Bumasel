@@ -23,6 +23,9 @@ import Store from "./Pages/Vendors/store/Store";
 import SubscriptionTable from "./Pages/Vendors/Subscription/SubscriptionTable";
 import GetStarted from "./Pages/Vendors/Onboarding/GetStarted";
 // eslint-disable-next-line
+import Terms from "./Pages/OfficialPages/Terms";
+import PrivacyPolicy from "./Pages/OfficialPages/PrivacyPolicy";
+import AboutUs from "./Pages/OfficialPages/AboutUs";
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -46,7 +49,11 @@ ReactDOM.render(
 					<Route path="subscription" element={<SubscriptionTable />} />
 				</Route>
 
-				<Route path="/vendor/Onboarding" element={<GetStarted/>} />
+				<Route path="/vendor/Onboarding" element={<GetStarted />} />
+				
+				<Route path="/terms" element={<Terms />} />
+				<Route path="/privacypolicy" element={<PrivacyPolicy />} />
+				<Route path = "/aboutUs" element = {<AboutUs />} />
 
 				<Route path="*" element={<div>404 Not Found</div>} />
 			</Routes>

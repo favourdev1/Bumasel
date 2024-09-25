@@ -19,7 +19,7 @@ export default function HomePage() {
 						<option value="">Select State</option>
 						<option value="state1">State 1</option>
 						<option value="state2">State 2</option>
-						<option value="state3">State 3</option>
+						<option value="state3">deState 3</option>
 					</select>
 
 					<select className="border border-gray-300 rounded-lg  focus:outline-none  px-3 py-1.5 ml-4 flex-1">

@@ -161,11 +161,11 @@ export default function LoginPage() {
 			/>
 			{/* <VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} /> */}
 			<ResetPassword open={open} setOpen={setOpen} />
-			<div className="hidden  lg:flex lg:w-2/5 relative overflow-hidden h-full  items-center">
-				<div className="fixed h-[90vh] relative ">
+			<div className="hidden  lg:flex lg:w-2/5 relative overflow-hidden  items-center">
+				<div className="fixed md:h-[60vh] lg:h-[90dvh] top-[5%] left-10 ">
 					<img
 						src="./images/login-girl.png"
-						className="rounded-xl border-slate-100  max-h-[100vh]  w-full h-full"
+						className="rounded-xl border-slate-100  max-h-[100dvh]  w-full h-full"
 						alt="Login Page"
 					/>
 					<div className="absolute bottom-5 w-full pl-10 py-10">
