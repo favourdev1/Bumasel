@@ -3,13 +3,13 @@
 import React from "react";
 import { useContext } from "react";
 import GlobalContext from "../AppComponents/Layout/GlobalContext";
-import { MdOutlineSort } from "react-icons/md";
-import { CiHeart } from "react-icons/ci";
-import { Link } from "react-router-dom";
+// import { MdOutlineSort } from "react-icons/md";
+// import { CiHeart } from "react-icons/ci";
+// import { Link } from "react-router-dom";
 import Category from "./component/Category";
 import ProductCard from "./component/ProductCard"
 export default function HomePage() {
-	const { searchQuery, products, Categories } = useContext(GlobalContext);
+	const {  products, Categories } = useContext(GlobalContext);
 	return (
 		<div className="max-w-7xl mx-auto px-4 xl:px-2 py-10">
 			<div className="w-full flex flex-col justify-between gap-4 mb-4">
