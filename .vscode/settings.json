@@ -1,5 +1,7 @@
 {
     "search.exclude": {
         "**/node_modules": false
-    }
+    },
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true
 }

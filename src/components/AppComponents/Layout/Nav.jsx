@@ -152,7 +152,7 @@ export default function Nav() {
 					</div>
 				</div>
 
-				
+
 				{isMobileMenuOpen && (
 					<div className="md:hidden bg-white/50 backdrop-blur-lg w-full py-4 px-6">
 						<div className="flex flex-col space-y-4">
@@ -181,25 +181,25 @@ export default function Nav() {
 				)}
 			</nav>
 
-			
+
 			<div className="relative w-full block md:hidden mt-20 px-5">
-								<input
-									type="text"
-									value={searchQuery}
-									onKeyDown={handleKeyDown}
-									onChange={(e) => setSearchQuery(e.target.value)}
-									className="bg-[#FAF7FF] w-full rounded-3xl text-gray-600 text-xs px-4 py-2.5 placeholder-gray-400 border border-stone-200 focus:outline-none focus:border-0 focus:ring-purple-700 focus:ring-2"
-									placeholder="What Are You Looking To Buy?"
-								/>
-								<div className="absolute inset-y-0 right-4 flex items-center">
-									<button
-										type="submit"
-										className="text-gray-300 focus:outline-none px-4 py-2 rounded-3xl"
-									>
-										<SearchIcon width={20} height={20} />
-									</button>
-								</div>
-							</div>
+				<input
+					type="text"
+					value={searchQuery}
+					onKeyDown={handleKeyDown}
+					onChange={(e) => setSearchQuery(e.target.value)}
+					className="bg-[#FAF7FF] w-full rounded-3xl text-gray-600 text-xs px-4 py-2.5 placeholder-gray-400 border border-stone-200 focus:outline-none focus:border-0 focus:ring-purple-700 focus:ring-2"
+					placeholder="What Are You Looking To Buy?"
+				/>
+				<div className="absolute inset-y-0 right-4 flex items-center">
+					<button
+						type="submit"
+						className="text-gray-300 focus:outline-none px-4 py-2 rounded-3xl"
+					>
+						<SearchIcon width={20} height={20} />
+					</button>
+				</div>
+			</div>
 
 
 			<nav className=" py-2  mt-20 hidden lg:block items-center text-xs justify-start">
