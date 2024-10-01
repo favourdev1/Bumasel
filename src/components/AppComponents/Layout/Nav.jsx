@@ -128,7 +128,7 @@ export default function Nav() {
 						<div className="hidden md:block">
 							<div className="ml-10 flex items-center space-x-6">
 								<button className="bg-purple-600 text-white flex items-center gap-2 rounded-xl px-4 py-2 text-xs hover:bg-purple-700 hover:text-white duration-500 transition-all">
-									<img src="/Images/shop.png" alt="Shop" />
+									<img src="/images/shop.png" alt="Shop" />
 									Sell
 								</button>
 								{token == null || token == "undefined" ? (
@@ -157,7 +157,7 @@ export default function Nav() {
 					<div className="md:hidden bg-white/50 backdrop-blur-lg w-full py-4 px-6">
 						<div className="flex flex-col space-y-4">
 							<button className="bg-purple-600 text-white flex items-center gap-2 rounded-xl px-4 py-2 text-xs hover:bg-purple-700 hover:text-white duration-500 transition-all">
-								<img src="/Images/shop.png" alt="Shop" />
+								<img src="/images/shop.png" alt="Shop" />
 								Sell
 							</button>
 							{token !== null && token !== "undefined" ? (
@@ -209,7 +209,7 @@ export default function Nav() {
 							className="rounded-xl hover:bg-purple-100 pr-3 py-2  flex items-center gap-4 duration-500 hover:px-3 hover:text-purple-700 hover:font-bold"
 							to={"/"}
 						>
-							<img src="/images/homeIcon.png" className="size-4" />
+							<img src="/images/HomeIcon.png" className="size-4" />
 							Home
 						</Link>
 						<Link
