@@ -16,32 +16,32 @@ import "react-toastify/dist/ReactToastify.css";
 import widths from "../animatedWidth";
 import ResetPassword from "../ResetPassword/ResetPassword";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
-// import VerifyOtp from "../VerifyOtp/VerifyOtp";
+import VerifyOtp from "../VerifyOtp/VerifyOtp";
 import LoadingState from "../../Props/LoadingState";
-import "./LoginPage.css";
 import axios from "axios";
 import Cookies from "js-cookie";
+import "./LoginPage.css";
 import { FcGoogle } from "react-icons/fc";
+import SuccessModal from "../SucessModal/SuccessModal";
 
 export default function LoginPage() {
 	// State declarations
 	const [showPassword, setShowPassword] = useState(false);
-	const [open, setOpen] = useState(false);
-	const [openverifyOTPModal, setopenVerifyOTPModal] = useState(true);
+	const [openResetPassword, setOpenResetPassword] = useState(false);
+	const [openverifyOTPModal, setopenVerifyOTPModal] = useState(false);
 	const [openForgotPasswordModal, setOpenForgotPasswordModal] = useState(false);
 	const [animatedWidth, setAnimatedWidth] = useState("w-full");
 	const [showLoading, setShowLoading] = useState(false);
 	const apiUrl = process.env.REACT_APP_API_URL;
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
 	// Function to navigate to registration page
 	const showRegister = () => {
 		window.location.href = "/signup";
 	};
 
-	// check if user is already logged in, if
-	// if yes , redirect to main page
-
+	// check if user is already logged in,
 	useEffect(() => {
 		// Check if the user is already logged in
 		const token = Cookies.get("token");
@@ -82,8 +82,6 @@ export default function LoginPage() {
 
 			event.preventDefault();
 
-			
-
 			const allFieldsFilled = Object.values(userData).every(
 				(field) => field !== ""
 			);
@@ -98,15 +96,34 @@ export default function LoginPage() {
 					.post(apiUrl + "/auth/login", userData)
 					.then((res) => {
 						console.log(res.data);
-						let response = res.data.data;
+						let response = res.data.data.user;
+						console.log(response);
 						if (response.status == "error") {
 							toast.error(response.message);
 						} else {
 							toast.success(res.data.message);
-							let token = res.data.data.token;
-							// Save the token to a cookie
-							
+							let token = res.data.data.accessToken;
+
 							Cookies.set("token", token, { expires: 2 });
+							Cookies.set("full_name", response.full_name, { expires: 2 });
+							Cookies.set("first_name", response.first_name, { expires: 2 });
+							Cookies.set("last_name", response.last_name, { expires: 2 });
+							Cookies.set("email", response.email, { expires: 2 });
+							Cookies.set("phone", response.phone_number, { expires: 2 });
+							Cookies.set("role", response.role, { expires: 2 });
+							Cookies.set("id", response.id, { expires: 2 });
+							Cookies.set("is_activated", response.is_activated, {
+								expires: 2
+							});
+							Cookies.set("is_verified", response.is_verified, { expires: 2 });
+							Cookies.set("is_student", response.is_student, { expires: 2 });
+							Cookies.set("profile_image", response.profile_image, {
+								expires: 2
+							});
+							Cookies.set("address", response.address, { expires: 2 });
+							Cookies.set("country", response.country, { expires: 2 });
+							Cookies.set("state", response.state, { expires: 2 });
+							Cookies.set("gender", response.gender, { expires: 2 });
 							setTimeout(() => {
 								window.location.href = "/";
 							}, 1000);
@@ -128,10 +145,9 @@ export default function LoginPage() {
 		}
 	}
 
-	///google login onclick 
+	///google login onclick
 	function handleGoogleLogin() {
-		window.location.href = apiUrl + "/accounts/google/login/"
-	
+		window.location.href = apiUrl + "/accounts/google/login/";
 	}
 
 	// ========================================================================
@@ -159,9 +175,13 @@ export default function LoginPage() {
 				open={openForgotPasswordModal}
 				setOpen={setOpenForgotPasswordModal}
 			/>
-			{/* <VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} /> */}
-			<ResetPassword open={open} setOpen={setOpen} />
-			<div className="hidden  lg:flex lg:w-2/5  relative overflow-hidden  items-center">
+			<VerifyOtp open={openverifyOTPModal} setOpen={setopenVerifyOTPModal} />
+
+			{/* <SuccessModal
+				open={openResetPassword} setOpen={setOpenResetPassword}
+			/> */}
+			<ResetPassword open={openResetPassword} setOpen={setOpenResetPassword} />
+			<div className="hidden  lg:flex lg:w-3/5 xl:w-2/5  relative overflow-hidden  items-center">
 				<div className=" md:h-[60vh] lg:h-[90dvh] top-[5%] left-10 ">
 					<img
 						src="./images/login-girl.png"
@@ -169,7 +189,7 @@ export default function LoginPage() {
 						alt="Login Page"
 					/>
 					<div className="absolute bottom-5 w-full pl-10 py-10">
-						<div class="backdrop-blur-xl bg-white/20 e w-3/4 rounded-lg p-4 text-white py-5">
+						<div className="backdrop-blur-xl bg-white/20 e w-3/4 rounded-lg p-4 text-white py-5">
 							<p className="font-bold text-xl">
 								The Best Ecommerce Platform You Can Ask For
 							</p>
@@ -180,7 +200,7 @@ export default function LoginPage() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full justify-center md:1/5 lg:w-2/5  flex flex-col px-5 md:p-10   h-full overflow-y-scroll hide-scrollbar ">
+			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5  flex flex-col px-5 md:p-10   h-[100dvh] overflow-y-scroll hide-scrollbar">
 				<img src="./images/logo.png" className="w-24 " alt=" App Logo" />
 				<div className="flex flex-col ">
 					<div className="pb-10">
@@ -224,7 +244,7 @@ export default function LoginPage() {
 								onChange={(e) => setPassword(e.target.value)}
 								className="w-full px-4 py-2 ml-3 pl-8 border-transparent bg-transparent focus:border-transparent  focus:bg-transparent active:border-transparent ring-none focus:outline-none focus:ring-0 text-sm"
 								placeholder="Password"
-								autocomplete="new-password"
+								autoComplete="new-password"
 							/>
 							<div
 								className="absolute top-1/2 right-3 transform -translate-y-1/2 cursor-pointer"
@@ -263,8 +283,11 @@ export default function LoginPage() {
 
 					{/* google and twitter login white background with border */}
 					<div className="flex items-center justify-between gap-5 mt-4 mx-auto">
-						<button className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-full hover:shadow-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4" onClick = {handleGoogleLogin}>
-						<FcGoogle  className="h-5 w-5 mr-2" />
+						<button
+							className="w-full md:w-max pl-4 pr-8 py-3 bg-white text-black rounded-full hover:shadow-md border border-gray-200 hover:bg-purple-700 hover:text-white duration-500 focus:outline-none flex items-center cursor-pointer  text-sm  text-slate-900 focus:bg-gray-200 whitespace-nowrap gap-4"
+							onClick={handleGoogleLogin}
+						>
+							<FcGoogle className="h-5 w-5 mr-2" />
 							Google
 						</button>
 

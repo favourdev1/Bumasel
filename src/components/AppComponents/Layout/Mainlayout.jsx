@@ -11,13 +11,11 @@ import { useLocation } from "react-router";
 import GlobalContext from "./GlobalContext";
 
 const Mainlayout = () => {
-
 	// makse the page scroll to the top on page load
 	const location = useLocation();
 	useEffect(() => {
-	  window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 	}, [location]);
-
 
 	const products = [
 		{
@@ -218,7 +216,7 @@ const Mainlayout = () => {
 	// check if user is loggedin
 	// if user is logged in, get user profile
 
-	const [userProfile, setUserProfile] = useState(null);
+	const [userProfile, setUserProfile] = useState({});
 	const apiUrl = process.env.REACT_APP_API_URL;
 	useEffect(() => {
 		// Check if the user is logged in
@@ -226,19 +224,37 @@ const Mainlayout = () => {
 		if (token) {
 			console.log(token);
 			// If the user is logged in, get the user's profile
-			axios
-				.get(apiUrl + "/get-single-user", {
-					headers: {
-						Authorization: `Bearer ${token}`
-					}
-				})
-				.then((response) => {
-					setUserProfile(response.data.data);
-					console.log(response.data);
-				})
-				.catch((error) => {
-					console.error("Error fetching user profile:", error);
-				});
+			setUserProfile({
+				token: Cookies.get("token"),
+				fullname: Cookies.get("full_name"),
+				first_name: Cookies.get("first_name"),
+				last_name: Cookies.get("last_name"),
+				email: Cookies.get("email"),
+				phone: Cookies.get("phone"),
+				role: Cookies.get("role"),
+				id: Cookies.get("id"),
+				is_activated: Cookies.get("is_activated"),
+				is_verified: Cookies.get("is_verified"),
+				is_student: Cookies.get("is_student"),
+				profile_image: Cookies.get("profile_image"),
+				address: Cookies.get("address"),
+				country: Cookies.get("country"),
+				state: Cookies.get("state"),
+				gender: Cookies.get("gender")
+			});
+			// axios
+			// 	.get(apiUrl + "/get-single-user", {
+			// 		headers: {
+			// 			Authorization: `Bearer ${token}`
+			// 		}
+			// 	})
+			// 	.then((response) => {
+			// 		setUserProfile(response.data.data);
+			// 		console.log(response.data);
+			// 	})
+			// 	.catch((error) => {
+			// 		console.error("Error fetching user profile:", error);
+			// 	});
 		}
 	}, []);
 

@@ -32,6 +32,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Checkbox, Select } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
+import VerifyOtp from "../VerifyOtp/VerifyOtp";
 // ==============================================================
 // function here
 // ==============================================================
@@ -42,6 +43,9 @@ export default function Signup() {
 	const [animatedWidth, setAnimatedWidth] = useState("w-full");
 	const [step, setStep] = useState(1);
 	const [acceptConditions, setacceptConditions] = useState(false);
+	const[showVerifyOtp,setShowVerifyOtp]=useState(false)
+
+
 	// form data states
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
@@ -124,9 +128,10 @@ export default function Signup() {
 							toast.error(response.message);
 						} else {
 							toast.success(res.data.message);
-							setTimeout(() => {
-								window.location.href = "/login";
-							}, 1000);
+							setShowVerifyOtp(true);
+							// setTimeout(() => {
+							// 	window.location.href = "/login";
+							// }, 1000);
 						}
 					})
 					.catch((error) => {
@@ -178,6 +183,9 @@ export default function Signup() {
 			{/* conditionally show loading screen */}
 			{showLoading === true && <LoadingState />}
 
+			{/* coonditionally show VerifyOtp Interface */}
+			{<VerifyOtp open = {showVerifyOtp} setOpen={setShowVerifyOtp} email={email} />}
+
 			<ToastContainer
 				position="top-right"
 				autoClose={5000}
@@ -192,7 +200,7 @@ export default function Signup() {
 				limit={1}
 				toastStyle={{ fontSize: "14px" }}
 			/>
-			<div className="hidden  lg:flex lg:w-3/5  relative overflow-hidden  items-center">
+			<div className="hidden  lg:flex lg:w-3/5 xl:w-2/5  relative overflow-hidden  items-center">
 				<div className=" md:h-[60vh] lg:h-[90dvh] top-[5%] left-10 ">
 					<img
 						src="./images/login-girl.png"
@@ -211,7 +219,7 @@ export default function Signup() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full justify-center md:1/5 lg:w-3/5  flex flex-col px-5 md:p-10   h-[100dvh] overflow-y-scroll hide-scrollbar ">
+			<div className="w-full justify-center md:1/5 lg:w-3/5 xl:w-2/5  flex flex-col px-5 md:p-10   h-[100dvh] overflow-y-scroll hide-scrollbar ">
 				<img src="./images/logo.png" className="w-24 " alt=" App Logo" />
 				<form className="mt-4">
 					<div className="flex flex-col   pb-10 ">

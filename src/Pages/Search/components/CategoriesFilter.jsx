@@ -12,7 +12,7 @@ const Dropdown = () => {
     <div className="w-full border rounded-lg bg-white mb-3 px-2">
       <p
         onClick={toggleDropdown}
-        className="w-full py-3 text-left px-4 flex items-center font-semibold justify-between "
+        className="w-full py-3 text-left px-4 flex items-center font-semibold justify-between border-b"
       >
         Categories
         <span className={` transition-transform duration-300 cursor-pointer ${isOpen ? 'rotate-180' : ''}`}>

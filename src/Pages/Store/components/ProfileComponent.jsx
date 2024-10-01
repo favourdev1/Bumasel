@@ -70,7 +70,7 @@ export const ProfileComponent = ({userProfile}) => {
 						Profile Information
 					</h2>
 					<p className="text-gray-400 mb-4 lg:block hidden">
-						This is were you can edit your profile information
+						{/* This is were you can edit your profile information */}
 					</p>
 					<form onSubmit={handleSubmit} className="lg:w-[80%] w-full">
 						<div className="mb-4">

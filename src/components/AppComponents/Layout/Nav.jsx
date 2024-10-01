@@ -131,7 +131,7 @@ export default function Nav() {
 									<img src="/Images/shop.png" alt="Shop" />
 									Sell
 								</button>
-								{token !== null && token !== "undefined" ? (
+								{token == null || token == "undefined" ? (
 									<Link
 										to="/login"
 										className="text-purple-700 px-4 py-3 rounded-xl text-xs hover:underline duration-500 hover:text-purple-700 hover:font-bold hover:bg-purple-100"

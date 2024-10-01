@@ -1,7 +1,7 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-function SuccessfulAccountCreation({ open, setOpen }) {
+function SuccessModal({ open, setOpen }) {
     const cancelButtonRef = useRef(null);
 
     return (
@@ -72,4 +72,4 @@ function SuccessfulAccountCreation({ open, setOpen }) {
     );
 }
 
-export default SuccessfulAccountCreation;
+export default SuccessModal;
