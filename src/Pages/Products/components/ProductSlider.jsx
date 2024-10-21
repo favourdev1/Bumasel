@@ -2,8 +2,8 @@
 
 import React from "react";
 import Slider from "react-slick";
-import { CiHeart } from "react-icons/ci";
-import { Link } from "react-router-dom";
+// import { CiHeart } from "react-icons/ci";
+// import { Link } from "react-router-dom";
 import ProductCard from "../../../components/Home/component/ProductCard";
 
 export default function ProductSlider({ products }) {

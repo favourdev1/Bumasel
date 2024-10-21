@@ -1,6 +1,8 @@
 /** @format */
 
-import React, { useState, useContext } from "react";
+import React, {
+	useState, //useContext
+} from "react";
 import { useNavigate } from 'react-router-dom';
 import Switch from "react-switch";
 import { Link } from "react-router-dom";
@@ -9,14 +11,14 @@ import {
 	FaTrash,
 	FaQuestionCircle,
 	FaInfoCircle,
-	FaBriefcase,
-	FaLocationArrow,
+	// FaBriefcase,
+	// FaLocationArrow,
 	FaAngleRight,
-	FaArrowLeft
+	// FaArrowLeft
 } from "react-icons/fa";
 
-import { BsTelephone } from "react-icons/bs";
-import { FiUser } from "react-icons/fi";
+// import { BsTelephone } from "react-icons/bs";
+// import { FiUser } from "react-icons/fi";
 import { AiOutlineBug, AiTwotoneMail } from "react-icons/ai";
 import { Profileoption } from "./components/Profileoption";
 import { ProfileComponent } from "./components/ProfileComponent";
@@ -26,10 +28,10 @@ import SavedProduct from "./components/SavedProduct";
 function ProfileSection({ userProfile }) {
 	const [emailChecked, setEmailChecked] = useState(false);
 	const [newsletterChecked, setNewsletterChecked] = useState(false);
-	const [formData, setFormData] = useState(userProfile);
+	// const [formData, setFormData] = useState(userProfile);
 	
-		const [stateInput, setStateInput] = useState("");
-		const [cityInput, setCityInput] = useState("");
+	// 	const [stateInput, setStateInput] = useState("");
+	// 	const [cityInput, setCityInput] = useState("");
 	const [editSectionOpen, setEditSectionOpen] = useState(false); // State to track if edit section is open on mobile
 
 	// Handler for email notification switch
@@ -42,14 +44,14 @@ function ProfileSection({ userProfile }) {
 		setNewsletterChecked(checked);
 	};
 
-	const handleInputChange = (e) => {
-		const { id, value } = e.target;
-		if (id === "stateInput") {
-			setStateInput(value);
-		} else {
-			setCityInput(value);
-		}
-	};
+	// const handleInputChange = (e) => {
+	// 	const { id, value } = e.target;
+	// 	if (id === "stateInput") {
+	// 		setStateInput(value);
+	// 	} else {
+	// 		setCityInput(value);
+	// 	}
+	// };
 
 	const navigate = useNavigate();
 

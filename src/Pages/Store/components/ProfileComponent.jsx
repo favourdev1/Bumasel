@@ -1,25 +1,27 @@
 import React,{useState} from 'react'
 import {
-	FaImage,
-	FaTrash,
-	FaQuestionCircle,
-	FaInfoCircle,
+	// FaImage,
+	// FaTrash,
+	// FaQuestionCircle,
+	// FaInfoCircle,
 	FaBriefcase,
 	FaLocationArrow,
-	FaAngleRight,
+	// FaAngleRight,
 	FaArrowLeft
 } from "react-icons/fa";
-import Switch from "react-switch";
+// import Switch from "react-switch";
 import { Link } from "react-router-dom";
 import { BsTelephone } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
-import { AiOutlineBug, AiTwotoneMail } from "react-icons/ai";
+// import { AiOutlineBug, AiTwotoneMail } from "react-icons/ai";
 export const ProfileComponent = ({userProfile}) => {
 
-    const [emailChecked, setEmailChecked] = useState(false);
-	const [newsletterChecked, setNewsletterChecked] = useState(false);
+    // const [emailChecked, setEmailChecked] = useState(false);
+	// const [newsletterChecked, setNewsletterChecked] = useState(false);
 	const [formData, setFormData] = useState(userProfile);
-	const [editSectionOpen, setEditSectionOpen] = useState(false); // State to track if edit section is open on mobile
+	const [
+		// editSectionOpen,
+		setEditSectionOpen] = useState(false); // State to track if edit section is open on mobile
 
 	const handleChangebtn = (e) => {
 		const { name, value } = e.target;
@@ -37,14 +39,14 @@ export const ProfileComponent = ({userProfile}) => {
     
 
     // Handler for email notification switch
-	const handleChangeEmail = (checked) => {
-		setEmailChecked(checked);
-	};
+	// const handleChangeEmail = (checked) => {
+	// 	setEmailChecked(checked);
+	// };
 
-	// Handler for newsletter alert switch
-	const handleChangeNewsletter = (checked) => {
-		setNewsletterChecked(checked);
-	};
+	// // Handler for newsletter alert switch
+	// const handleChangeNewsletter = (checked) => {
+	// 	setNewsletterChecked(checked);
+	// };
 
 	const [stateInput, setStateInput] = useState("");
 	const [cityInput, setCityInput] = useState("");

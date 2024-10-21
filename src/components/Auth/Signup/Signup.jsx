@@ -15,7 +15,7 @@ import { PiPasswordDuotone } from "react-icons/pi";
 import { IoMdArrowBack } from "react-icons/io";
 // CSS imports
 import "../Login/LoginPage";
-import widths from "../animatedWidth";
+// import widths from "../animatedWidth";
 
 import "../Login/LoginPage.css";
 
@@ -60,19 +60,19 @@ export default function Signup() {
 	const [country, setCountry] = useState("");
 	const [state, setState] = useState("");
 
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			// Generate a random index excluding the current index
-			let randomIndex;
-			do {
-				randomIndex = Math.floor(Math.random() * widths.length);
-			} while (randomIndex === widths.indexOf(animatedWidth));
+	// useEffect(() => {
+	// 	const intervalId = setInterval(() => {
+	// 		// Generate a random index excluding the current index
+	// 		let randomIndex;
+	// 		do {
+	// 			randomIndex = Math.floor(Math.random() * widths.length);
+	// 		} while (randomIndex === widths.indexOf(animatedWidth));
 
-			setAnimatedWidth(widths[randomIndex]);
-		}, 2000);
+	// 		setAnimatedWidth(widths[randomIndex]);
+	// 	}, 2000);
 
-		return () => clearInterval(intervalId);
-	}, [animatedWidth, widths]);
+	// 	return () => clearInterval(intervalId);
+	// }, [animatedWidth, widths]);
 
 	useEffect(() => {
 		// Check if the user is already logged in
@@ -124,7 +124,7 @@ export default function Signup() {
 					.then((res) => {
 						console.log(res.data);
 						let response = res.data.data;
-						if (response.status == "error") {
+						if (response.status === "error") {
 							toast.error(response.message);
 						} else {
 							toast.success(res.data.message);
@@ -225,7 +225,7 @@ export default function Signup() {
 					<div className="flex flex-col   pb-10 ">
 						<div className="pb-10">
 							{/* back button  */}
-							{step == 2 && (
+							{step === 2 && (
 								<>
 									{" "}
 									<div

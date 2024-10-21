@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import GlobalContext from "../../components/AppComponents/Layout/GlobalContext";
-import { MdOutlineSort } from "react-icons/md";
-import { CiHeart } from "react-icons/ci";
-import { Link } from "react-router-dom";
-import ProductPage from "../Products/ProductPage";
+// import { MdOutlineSort } from "react-icons/md";
+// import { CiHeart } from "react-icons/ci";
+// import { Link } from "react-router-dom";
+// import ProductPage from "../Products/ProductPage";
 import CategoriesFilter from "./components/CategoriesFilter";
 import BrandFilter from "./components/BrandFilter";
 import PriceFilter from "./components/PriceFilter";
@@ -15,7 +15,7 @@ import PaginationGroup from "./PaginationGroup";
 import SortFilter from "./components/SortFilter";
 
 function SearchPage() {
-	const { searchQuery, products } = useContext(GlobalContext);
+	const {  products } = useContext(GlobalContext);
 	const itemsPerPage = 5; // Number of items per page
 	const [currentPage, setCurrentPage] = useState(1);
 

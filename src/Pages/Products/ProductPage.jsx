@@ -3,15 +3,14 @@
 import React, { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import GlobalContext from "../../components/AppComponents/Layout/GlobalContext";
-import { CiHeart } from "react-icons/ci";
+
 import { AiTwotoneHeart } from "react-icons/ai";
 import { FaArrowLeft, FaStar } from "react-icons/fa";
-import { SiAdidas } from "react-icons/si";
+
 
 import ProductModal from "./components/ProductModal";
 import PoductSlider from "./components/ProductSlider";
 import CommentCard from "./components/CommentCard";
-import { Transition } from "@headlessui/react";
 import ContactModal from "./components/ContactModal";
 const ProductPage = () => {
 	const { products } = useContext(GlobalContext);
@@ -247,7 +246,7 @@ const ProductPage = () => {
 								<div className="gap-2 flex text-xs">
 									<button
 										className={`p-4 rounded-xl bg-[#FAF7FF] hover:bg-[#e1d5f5] transition-colors duration-300 border ${
-											activeSize == 1 ? "bg-purple-700 text-white" : ""
+											activeSize === 1 ? "bg-purple-700 text-white" : ""
 										} `}
 									>
 										XXL

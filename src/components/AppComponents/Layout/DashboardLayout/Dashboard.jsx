@@ -215,7 +215,7 @@ const Dashboard = () => {
 	// if user is logged in, get user profile
 
 	const [userProfile, setUserProfile] = useState(null);
-	const apiUrl = process.env.REACT_APP_API_URL;
+	// const apiUrl = process.env.REACT_APP_API_URL;
 
 	return (
 		<DashboardContext.Provider

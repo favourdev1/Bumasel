@@ -1,8 +1,8 @@
 /** @format */
 
 import React, { useState } from "react";
-import { FaArrowLeft, FaLocationArrow } from "react-icons/fa";
-import { AiTwotoneMail } from "react-icons/ai";
+// import { FaArrowLeft, FaLocationArrow } from "react-icons/fa";
+// import { AiTwotoneMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 
 export default function StoreInfo() {
@@ -11,16 +11,17 @@ export default function StoreInfo() {
 	const [storeEmail, setStoreEmail] = useState("");
 
 	const [storeContact, setStoreContact] = useState("");
-	const [storeAddress, setStoreAddress] = useState("");
-	const [showSuccessModal, setShowSuccessModal] = useState(false);
+	// const [storeAddress, setStoreAddress] = useState("");
+	const [//showSuccessModal,
+		setShowSuccessModal] = useState(false);
 
-	const handleContinue = () => {
-		// Perform any necessary validation here before showing success modal
-		setShowSuccessModal(true);
-	};
-	const handleCloseSuccessModal = () => {
-		setShowSuccessModal(false);
-	};
+	// const handleContinue = () => {
+	// 	// Perform any necessary validation here before showing success modal
+	// 	setShowSuccessModal(true);
+	// };
+	// const handleCloseSuccessModal = () => {
+	// 	setShowSuccessModal(false);
+	// };
 
 	return (
 		<div className="px-2      w-full h-full flex flex-col justify-center  bg-white rounded-xl ">
@@ -123,7 +124,7 @@ export default function StoreInfo() {
 					<div className="relative mt-1 border overflow-hidden border-gray-200 rounded-md focus-within:ring-2 focus-within:ring-purple-700 outline-none duration-500 ">
 						{/* You can replace the src with the appropriate icon for phone number */}
 
-						<img src="/images/link-square.png" className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-400" />
+						<img src="/images/link-square.png" className="absolute top-1/2 left-3 transform -translate-y-1/2 h-5 w-5 2 focus-within:text-purple-700 text-gray-400" alt="image"/>
 						<input
 							type="tel"
 							className="w-full px-4 ml-6 py-2 duration-500  border-transparent focus:border-transparent outline-none active:border-transparent active:ring-none active:outline-none ring-none focus:outline-none focus:ring-0 text-sm"

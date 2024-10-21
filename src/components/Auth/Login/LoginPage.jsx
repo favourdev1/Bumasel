@@ -13,7 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Local imports
-import widths from "../animatedWidth";
+// import widths from "../animatedWidth";
 import ResetPassword from "../ResetPassword/ResetPassword";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import VerifyOtp from "../VerifyOtp/VerifyOtp";
@@ -22,7 +22,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import "./LoginPage.css";
 import { FcGoogle } from "react-icons/fc";
-import SuccessModal from "../SucessModal/SuccessModal";
+// import SuccessModal from "../SucessModal/SuccessModal";
 
 export default function LoginPage() {
 	// State declarations
@@ -50,19 +50,19 @@ export default function LoginPage() {
 		}
 	}, []);
 
-	useEffect(() => {
-		const intervalId = setInterval(() => {
-			// Generate a random index excluding the current index
-			let randomIndex;
-			do {
-				randomIndex = Math.floor(Math.random() * widths.length);
-			} while (randomIndex === widths.indexOf(animatedWidth));
+	// useEffect(() => {
+	// 	const intervalId = setInterval(() => {
+	// 		// Generate a random index excluding the current index
+	// 		let randomIndex;
+	// 		do {
+	// 			randomIndex = Math.floor(Math.random() * widths.length);
+	// 		} while (randomIndex === widths.indexOf(animatedWidth));
 
-			setAnimatedWidth(widths[randomIndex]);
-		}, 2000);
+	// 		setAnimatedWidth(widths[randomIndex]);
+	// 	}, 2000);
 
-		return () => clearInterval(intervalId);
-	}, [animatedWidth, widths]);
+	// 	return () => clearInterval(intervalId);
+	// }, [animatedWidth, widths]);
 
 	// Effect hook to prevent scrolling on mount
 	useEffect(() => {
@@ -98,7 +98,7 @@ export default function LoginPage() {
 						console.log(res.data);
 						let response = res.data.data.user;
 						console.log(response);
-						if (response.status == "error") {
+						if (response.status === "error") {
 							toast.error(response.message);
 						} else {
 							toast.success(res.data.message);
@@ -155,7 +155,7 @@ export default function LoginPage() {
 	// =====================================================================
 	return (
 		<div className="h-screen m-0 bg-white flex items-center  px-3">
-			{showLoading == true && <LoadingState />}
+			{showLoading === true && <LoadingState />}
 
 			<ToastContainer
 				position="top-right"

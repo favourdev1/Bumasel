@@ -4,7 +4,7 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 function VerifyOtp({ open, setOpen, email  }) {
-	const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+	// const [otp, setOtp] = useState(["", "", "", "", "", ""]);
 
 	const cancelButtonRef = useRef(null);
 

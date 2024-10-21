@@ -1,8 +1,8 @@
 /** @format */
 
 import React from "react";
-import { FaUserCircle } from "react-icons/fa";
-import { AiOutlineLike, AiFillLike } from "react-icons/ai";
+// import { FaUserCircle } from "react-icons/fa";
+// import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
 const CommentCard = ({ comment }) => {
@@ -10,9 +10,9 @@ const CommentCard = ({ comment }) => {
 		user,
 		text,
 		createdAt,
-		likes,
+		// likes,
 		itemQualityRating,
-		customerServiceRating
+		// customerServiceRating
 	} = comment;
 
 

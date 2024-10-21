@@ -1,7 +1,9 @@
 /** @format */
 
-import React, { useContext } from "react";
-import GlobalContext from "../../../components/AppComponents/Layout/GlobalContext";
+import React, {
+	// useContext
+} from "react";
+// import GlobalContext from "../../../components/AppComponents/Layout/GlobalContext";
 import ProductForm from "../component/ProductForm";
 function Sellerspage() {
 	// const {products} = useContext(GlobalContext);

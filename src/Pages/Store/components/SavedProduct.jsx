@@ -5,7 +5,10 @@ import ProductCard from '../../../components/Home/component/ProductCard';
 import GlobalContext from '../../../components/AppComponents/Layout/GlobalContext';
 
 const SavedProduct = () => {
-    const { searchQuery, products, Categories } = useContext(GlobalContext);
+    const { //searchQuery,
+        products,
+        //Categories
+    } = useContext(GlobalContext);
     return (
         <div>
             <h1 className='font-bold text-gray-950 text-xl'> Saved Product</h1>

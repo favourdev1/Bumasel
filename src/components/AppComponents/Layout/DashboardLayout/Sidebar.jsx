@@ -17,38 +17,38 @@ const Sidebar = () => {
 	const location = useLocation();
 	const currentRoute = location.pathname;
 
-	const userSidebarItems = [
-		{
-			id: 1,
-			title: "Dashboard",
-			icon: <RxDashboard />, // Replace with actual icon component or class
-			route: "/dashboard"
-		},
-		{
-			id: 2,
-			title: "Stores Products",
-			icon: <ShopImageProp className=" size-5" />, // Replace with actual icon component or class
-			route: "/profile"
-		},
-		{
-			id: 3,
-			title: "Reviews",
-			icon: <MessageImageProp className=" size-5" />, // Replace with actual icon component or class
-			route: "/messages"
-		},
-		{
-			id: 4,
-			title: "Settings2",
-			icon: <SubscriptionImageProp className=" size-5" />, // Replace with actual icon component or class
-			route: "/settings"
-		},
-		{
-			id: 5,
-			title: "Logout",
-			icon: "logout-icon", // Replace with actual icon component or class
-			route: "/logout"
-		}
-	];
+	// const userSidebarItems = [
+	// 	{
+	// 		id: 1,
+	// 		title: "Dashboard",
+	// 		icon: <RxDashboard />, // Replace with actual icon component or class
+	// 		route: "/dashboard"
+	// 	},
+	// 	{
+	// 		id: 2,
+	// 		title: "Stores Products",
+	// 		icon: <ShopImageProp className=" size-5" />, // Replace with actual icon component or class
+	// 		route: "/profile"
+	// 	},
+	// 	{
+	// 		id: 3,
+	// 		title: "Reviews",
+	// 		icon: <MessageImageProp className=" size-5" />, // Replace with actual icon component or class
+	// 		route: "/messages"
+	// 	},
+	// 	{
+	// 		id: 4,
+	// 		title: "Settings2",
+	// 		icon: <SubscriptionImageProp className=" size-5" />, // Replace with actual icon component or class
+	// 		route: "/settings"
+	// 	},
+	// 	{
+	// 		id: 5,
+	// 		title: "Logout",
+	// 		icon: "logout-icon", // Replace with actual icon component or class
+	// 		route: "/logout"
+	// 	}
+	// ];
 
 	return (
 		<div className="bg-white border-r w-2/12  px-4 h-screen">

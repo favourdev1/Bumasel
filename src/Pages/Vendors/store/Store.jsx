@@ -8,7 +8,8 @@ import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 const Store = () => {
     const navigate = useNavigate();
-	const { searchQuery, products, Categories } = useContext(DashboardContext);
+	const { //searchQuery,
+		products, Categories } = useContext(DashboardContext);
 	const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
 	const dropdownRefs = useRef([]);
 
@@ -25,12 +26,12 @@ const Store = () => {
 		}
 	};
 
-	useEffect(() => {
-		document.addEventListener("mousedown", handleClickOutside);
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside);
-		};
-	}, [openDropdownIndex]);
+	// useEffect(() => {
+	// 	document.addEventListener("mousedown", handleClickOutside);
+	// 	return () => {
+	// 		document.removeEventListener("mousedown", handleClickOutside);
+	// 	};
+	// }, [openDropdownIndex]);
 
 	const data = [
 		{

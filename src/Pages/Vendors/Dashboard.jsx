@@ -299,7 +299,7 @@ function Dashboard() {
 								</table>
 							</div>
 							<div className="w-full flex items-center justify-center py-3">
-								<a
+								{/* <a
 									href="#"
 									className="text-gray-300 hover:text-purple-700 duration-500 flex items-center gap-2 mx-auto text-center"
 								>
@@ -307,7 +307,7 @@ function Dashboard() {
 									<span>
 										<GoArrowRight className="size-5" />
 									</span>
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>
