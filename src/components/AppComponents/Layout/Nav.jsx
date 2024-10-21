@@ -3,16 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SearchIcon } from "../SearchIcon.jsx";
-import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
-import { AiTwotoneStar } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import Switch from "react-switch";
-import { IoHelpCircleOutline } from "react-icons/io5";
 import { LuMenu } from "react-icons/lu";
 import ProfilePopup from "./ProfilePopup";
 import { useContext } from "react";
 
 import GlobalContext from "./GlobalContext";
-import { TbSmartHome } from "react-icons/tb";
 import { FiStar } from "react-icons/fi";
 
 import { useNavigate } from "react-router-dom";
@@ -131,7 +128,7 @@ export default function Nav() {
 									<img src="/images/shop.png" alt="Shop" />
 									Sell
 								</button>
-								{token == null || token == "undefined" ? (
+								{token === null || token === "undefined" ? (
 									<Link
 										to="/login"
 										className="text-purple-700 px-4 py-3 rounded-xl text-xs hover:underline duration-500 hover:text-purple-700 hover:font-bold hover:bg-purple-100"
@@ -209,7 +206,7 @@ export default function Nav() {
 							className="rounded-xl hover:bg-purple-100 pr-3 py-2  flex items-center gap-4 duration-500 hover:px-3 hover:text-purple-700 hover:font-bold"
 							to={"/"}
 						>
-							<img src="/images/HomeIcon.png" className="size-4" />
+							<img src="/images/HomeIcon.png" alt ="home" className="size-4" />
 							Home
 						</Link>
 						<Link
