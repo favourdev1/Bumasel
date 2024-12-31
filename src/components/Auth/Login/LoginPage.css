@@ -1,0 +1,59 @@
+/* body{
+    overflow: hidden !important;
+} */
+
+
+/* Scrollbar Track */
+/* ::-webkit-scrollbar {
+    width: 0px; 
+  } */
+  
+
+
+  .hide-scrollbar {
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    width: 0px; /* For Chrome, Safari, and Opera */
+  }
+
+  .custom-button {
+    border-radius: 9999px; /* rounded-full */
+    transition: border-radius 0.5s ease-in-out;
+}
+
+.custom-button:hover {
+    border-radius: 1rem; /* rounded-xl */
+}
+
+.loader {
+  width: 100px;
+  aspect-ratio: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  display: grid;
+  background: #fff; overflow: hidden !important;
+  filter: blur(5px) contrast(10) ;
+  mix-blend-mode: darken;
+}
+.loader:before,
+.loader:after{ 
+  content: "";
+  grid-area: 1/1; 
+  width: 40px;
+  height: 40px;
+  background: #7e22ce ;
+  animation: l7 2s infinite;
+}
+.loader:after{ 
+  animation-delay: -1s;
+}
+@keyframes l7{
+  0%   {transform: translate(   0,0)}
+  25%  {transform: translate(100%,0)}
+  50%  {transform: translate(100%,100%)}
+  75%  {transform: translate(   0,100%)}
+  100% {transform: translate(   0,0)}
+}
